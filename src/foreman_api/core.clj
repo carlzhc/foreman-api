@@ -69,7 +69,7 @@
       (json/read-str
        (:body output)))))
 
-(defn get-info
+(defn list-resources
   "Get information for given resouce names"
   [resource & names]
   (assert #(RESOURCES resource)
@@ -83,12 +83,12 @@
       (filter #((set names) (get % (get RESOURCES resource))) results)
       results)))
 
-(defn get-hosts-info
+(defn list-hosts
  "Given host names, fetch their informations"
   [& names]
-  (apply get-info :hosts names))
+  (apply list-resources :hosts names))
 
-(defn get-organizations-info
+(defn list-organizations
   "Given organization names, fetch their informations"
   [& names]
-  (apply get-info :organizations names))
+  (apply list-resources :organizations names))
