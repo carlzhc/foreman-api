@@ -7,4 +7,4 @@
                  [org.clojure/data.json "0.2.6"]
                  [http-kit "2.3.0"]
                  [environ "1.1.0"]]
-  :repl-options {:init-ns foreman-api.resource})
+  :repl-options {:init-ns foreman-api.core})
