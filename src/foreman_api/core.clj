@@ -93,7 +93,7 @@
 
 
 (def ^:dynamic *CACHE*
-  "Cache the result of list resources"
+  "Cache the result of list-resources"
   (atom {}))
 
 (defn clear-cache
@@ -114,20 +114,21 @@
 (defn call-api
   "Calls foreman api with given parameters,
   returns a map as result"
-  [method url & {fail :fail
-                 :or {fail true}
-                 :as params}]
+  [http-method url & {fail :fail
+                      :or {fail true}
+                      :as params}]
   (let [call-http (get
-              {"get" http/get
-               "post" http/post
-               "put" http/put
-               "delete" http/delete
-               :get http/get
-               :post http/post
-               :put http/put
-               :delete http/put} method)]
-    (assert call-http (str "Unknown method to call: " method))
-    (let [formatted-params  ;; make hyphen like underscore
+                   {"get" http/get
+                    "post" http/post
+                    "put" http/put
+                    "delete" http/delete
+                    :get http/get
+                    :post http/post
+                    :put http/put
+                    :delete http/delete}
+                   http-method)]
+    (assert call-http (str "Unknown method to call: " http-method))
+    (let [formatted-params ;; make hyphen like underscore
           (walk/postwalk #(if (keyword? %)
                             (-> % (name) (str/replace #"-" "_") (keyword))
                             %) params)
@@ -136,7 +137,7 @@
                    (assoc @*CONNECTION* :query-params formatted-params))]
       (when fail
         (assert (< (:status output) 400)
-                (str "Failed to call api (call-api " method " " url " ...): "
+                (str "Failed to call api (call-api " http-method " " url " ...): "
                      (if (re-matches #"^application/json"
                                      (get-in output [:headers :content-type]))
                        (get-in (json/read-str (:body output))
@@ -174,6 +175,47 @@
             (filter #(nameset (get % nametag)) resource))
           resource)]
     (map #(get % "id") target-resource)))
+
+(defn create-resource
+  "Create a resouce"
+  [resource & params]
+  (assert #(RESOURCE-TYPES resource)
+          (str "Unknown resource: " (name resource)))
+  (let [result #spy/d (apply call-api
+                         :post
+                         (str "/api/"
+                              (name (keyword-hypen-to-underscore resource)))
+                         params)]
+    (when-not (get result "error") (list-resources resource))        ; update cache
+    result))
+
+(defn delete-resource
+  "Delete a resource"
+  [resource id & params]
+  (assert #(RESOURCE-TYPES resource)
+          (str "Unknown resource: " (name resource)))
+  (let [result #spy/d (apply call-api
+                             :delete
+                             (str "/api/"
+                                  (name (keyword-hypen-to-underscore resource))
+                                  "/" id)
+                             (concat params [:id id]))]
+    (when-not (get result "error") (list-resources resource)) ; update cache
+    result))
+
+(defn update-resource
+  "Update a resource"
+  [resource id & params]
+  (assert #(RESOURCE-TYPES resource)
+          (str "Unknown resource: " (name resource)))
+  (let [result #spy/d (apply call-api
+                             :put
+                             (str "/api/"
+                                  (name (keyword-hypen-to-underscore resource))
+                                  "/" id)
+                             (concat params [:id id]))]
+    (when-not (get result "error") (list-resources resource)) ; update cache
+    result))
 
 (defn list-hosts
   "Given host names, fetches their informations"
