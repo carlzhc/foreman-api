@@ -1,24 +1,39 @@
 (ns foreman-api.connection
   (:require [clojure.string :as str]
-           [org.httpkit.client :as http]
-           [environ.core :refer [env]]))
+            [org.httpkit.client :as http]
+            [environ.core :refer [env]]))
 
-(def ^:dynamic *host*
+(def ^:dynamic *HOST*
   (atom
    (or (env :foreman-host) "https://localhost")))
 
-(def ^:dynamic *connection*
+(def ^:dynamic *CONNECTION*
   (atom
    {:headers {"content-type" "application/json; charset=utf-8"}
     :timeout  (if-let [v (env :foreman-timeout)]
                 (Integer. v)
                 3000)
     :keepalive (if-let [v (env :foreman-keepalive)]
-                (Integer. v)
-                3000)
+                 (Integer. v)
+                 3000)
     :insecure? (if-let [v (env :foreman-insecure)]
                  ({"true" true "false" false
                    "yes" true "no" false} v)
                  true)
     :basic-auth (when-let [v (env :foreman-auth)]
                   (take 2 (str/split v #":")))}))
+
+
+(def ^:dynamic *CACHE*
+  "Cache the result of list-resources"
+  (atom {}))
+
+(defn clear-cache
+  "Reset the CACHE to empty state"
+  []
+  (reset! *CACHE* {}))
+
+(defn update-cache
+  "Update the cache depending on the arguments"
+  [resource content]
+  (swap! *CACHE* assoc resource content))
