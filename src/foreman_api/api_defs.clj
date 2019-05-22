@@ -9,7 +9,7 @@
   "List all architectures for operating system"
   :GET
   "/api/operatingsystems/%s/architectures"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi show-an-architecture
   "Show an architecture"
@@ -43,7 +43,7 @@
   "List all audits for a given host"
   :GET
   "/api/hosts/%s/audits"
-  host_id)
+  host-id)
 
 (defapi show-an-audit
   "Show an audit"
@@ -60,13 +60,13 @@
   "List external authentication sources per location"
   :GET
   "/api/locations/%s/auth_source_externals"
-  location_id)
+  location-id)
 
 (defapi list-external-authentication-sources-per-organization
   "List external authentication sources per organization"
   :GET
   "/api/organizations/%s/auth_source_externals"
-  organization_id)
+  organization-id)
 
 (defapi show-an-external-authentication-source
   "Show an external authentication source"
@@ -100,13 +100,13 @@
   "List LDAP authentication sources per location"
   :GET
   "/api/locations/%s/auth_source_ldaps"
-  location_id)
+  location-id)
 
 (defapi list-ldap-authentication-sources-per-organization
   "List LDAP authentication sources per organization"
   :GET
   "/api/organizations/%s/auth_source_ldaps"
-  organization_id)
+  organization-id)
 
 (defapi show-an-ldap-authentication-source
   "Show an LDAP authentication source"
@@ -146,13 +146,13 @@
   "List all authentication sources per location"
   :GET
   "/api/locations/%s/auth_sources"
-  location_id)
+  location-id)
 
 (defapi list-all-authentication-sources-per-organization
   "List all authentication sources per organization"
   :GET
   "/api/organizations/%s/auth_sources"
-  organization_id)
+  organization-id)
 
 (defapi list-all-autosign-entries
   "List all autosign entries"
@@ -163,13 +163,13 @@
   "Create autosign entry"
   :POST
   "/api/smart_proxies/%s/autosign"
-  smart_proxy_id)
+  smart-proxy-id)
 
 (defapi delete-autosign-entry
   "Delete autosign entry"
   :DELETE
   "/api/smart_proxies/%s/autosign/%s"
-  smart_proxy_id id)
+  smart-proxy-id id)
 
 (defapi list-all-bookmarks
   "List all bookmarks"
@@ -231,25 +231,25 @@
   "Create a compute attributes set"
   :POST
   "/api/compute_resources/%s/compute_profiles/%s/compute_attributes"
-  compute_resource_id compute_profile_id)
+  compute-resource-id compute-profile-id)
 
 (defapi create-a-compute-attributes-set
   "Create a compute attributes set"
   :POST
   "/api/compute_profiles/%s/compute_resources/%s/compute_attributes"
-  compute_profile_id compute_resource_id)
+  compute-profile-id compute-resource-id)
 
 (defapi create-a-compute-attributes-set
   "Create a compute attributes set"
   :POST
   "/api/compute_resources/%s/compute_attributes"
-  compute_resource_id)
+  compute-resource-id)
 
 (defapi create-a-compute-attributes-set
   "Create a compute attributes set"
   :POST
   "/api/compute_profiles/%s/compute_attributes"
-  compute_profile_id)
+  compute-profile-id)
 
 (defapi create-a-compute-attributes-set
   "Create a compute attributes set"
@@ -260,25 +260,25 @@
   "Update a compute attributes set"
   :PUT
   "/api/compute_resources/%s/compute_profiles/%s/compute_attributes/%s"
-  compute_resource_id compute_profile_id id)
+  compute-resource-id compute-profile-id id)
 
 (defapi update-a-compute-attributes-set
   "Update a compute attributes set"
   :PUT
   "/api/compute_profiles/%s/compute_resources/%s/compute_attributes/%s"
-  compute_profile_id compute_resource_id id)
+  compute-profile-id compute-resource-id id)
 
 (defapi update-a-compute-attributes-set
   "Update a compute attributes set"
   :PUT
   "/api/compute_resources/%s/compute_attributes/%s"
-  compute_resource_id id)
+  compute-resource-id id)
 
 (defapi update-a-compute-attributes-set
   "Update a compute attributes set"
   :PUT
   "/api/compute_profiles/%s/compute_attributes/%s"
-  compute_profile_id id)
+  compute-profile-id id)
 
 (defapi update-a-compute-attributes-set
   "Update a compute attributes set"
@@ -382,13 +382,13 @@
   "List available networks for a compute resource cluster"
   :GET
   "/api/compute_resources/%s/available_clusters/%s/available_networks"
-  id cluster_id)
+  id cluster-id)
 
 (defapi list-resource-pools-for-a-compute-resource-cluster
   "List resource pools for a compute resource cluster"
   :GET
   "/api/compute_resources/%s/available_clusters/%s/available_resource_pools"
-  id cluster_id)
+  id cluster-id)
 
 (defapi list-storage-domains-for-a-compute-resource
   "List storage domains for a compute resource"
@@ -400,7 +400,7 @@
   "List attributes for a given storage domain"
   :GET
   "/api/compute_resources/%s/available_storage_domains/%s"
-  id storage_domain)
+  id storage-domain)
 
 (defapi list-storage-pods-for-a-compute-resource
   "List storage pods for a compute resource"
@@ -412,7 +412,7 @@
   "List attributes for a given storage pod"
   :GET
   "/api/compute_resources/%s/available_storage_pods/%s"
-  id storage_pod)
+  id storage-pod)
 
 (defapi list-available-security-groups-for-a-compute-resource
   "List available security groups for a compute resource"
@@ -486,7 +486,7 @@
   "Show the last report for a host"
   :GET
   "/api/hosts/%s/config_reports/last"
-  host_id)
+  host-id)
 
 (defapi list-provisioning-templates
   "List provisioning templates"
@@ -497,19 +497,19 @@
   "List provisioning templates per operating system"
   :GET
   "/api/operatingsystems/%s/config_templates"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-provisioning-templates-per-location
   "List provisioning templates per location"
   :GET
   "/api/locations/%s/config_templates"
-  location_id)
+  location-id)
 
 (defapi list-provisioning-templates-per-organization
   "List provisioning templates per organization"
   :GET
   "/api/organizations/%s/config_templates"
-  organization_id)
+  organization-id)
 
 (defapi show-provisioning-template-details
   "Show provisioning template details"
@@ -564,19 +564,19 @@
   "List of domains per subnet"
   :GET
   "/api/subnets/%s/domains"
-  subnet_id)
+  subnet-id)
 
 (defapi list-of-domains-per-location
   "List of domains per location"
   :GET
   "/api/locations/%s/domains"
-  location_id)
+  location-id)
 
 (defapi list-of-domains-per-organization
   "List of domains per organization"
   :GET
   "/api/organizations/%s/domains"
-  organization_id)
+  organization-id)
 
 (defapi show-a-domain
   "Show a domain"
@@ -611,13 +611,13 @@
   "Import puppet classes from puppet proxy for an environment"
   :POST
   "/api/smart_proxies/%s/environments/%s/import_puppetclasses"
-  smart_proxy_id id)
+  smart-proxy-id id)
 
 (defapi import-puppet-classes-from-puppet-proxy-for-an-environment
   "Import puppet classes from puppet proxy for an environment"
   :POST
   "/api/environments/%s/smart_proxies/%s/import_puppetclasses"
-  environment_id id)
+  environment-id id)
 
 (defapi list-all-environments
   "List all environments"
@@ -628,19 +628,19 @@
   "List environments of Puppet class"
   :GET
   "/api/puppetclasses/%s/environments"
-  puppetclass_id)
+  puppetclass-id)
 
 (defapi list-environments-per-location
   "List environments per location"
   :GET
   "/api/locations/%s/environments"
-  location_id)
+  location-id)
 
 (defapi list-environments-per-organization
   "List environments per organization"
   :GET
   "/api/organizations/%s/environments"
-  organization_id)
+  organization-id)
 
 (defapi show-an-environment
   "Show an environment"
@@ -669,49 +669,49 @@
   "List all external user groups for user group"
   :GET
   "/api/usergroups/%s/external_usergroups"
-  usergroup_id)
+  usergroup-id)
 
 (defapi list-all-external-user-groups-for-ldap-authentication-source
   "List all external user groups for LDAP authentication source"
   :GET
   "/api/auth_source_ldaps/%s/external_usergroups"
-  auth_source_ldap_id)
+  auth-source-ldap-id)
 
 (defapi show-an-external-user-group-for-user-group
   "Show an external user group for user group"
   :GET
   "/api/usergroups/%s/external_usergroups/%s"
-  usergroup_id id)
+  usergroup-id id)
 
 (defapi show-an-external-user-group-for-ldap-authentication-source
   "Show an external user group for LDAP authentication source"
   :GET
   "/api/auth_source_ldaps/%s/external_usergroups/%s"
-  auth_source_ldap_id id)
+  auth-source-ldap-id id)
 
 (defapi create-an-external-user-group-linked-to-a-user-group
   "Create an external user group linked to a user group"
   :POST
   "/api/usergroups/%s/external_usergroups"
-  usergroup_id)
+  usergroup-id)
 
 (defapi update-external-user-group
   "Update external user group"
   :PUT
   "/api/usergroups/%s/external_usergroups/%s"
-  usergroup_id id)
+  usergroup-id id)
 
 (defapi refresh-external-user-group
   "Refresh external user group"
   :PUT
   "/api/usergroups/%s/external_usergroups/%s/refresh"
-  usergroup_id id)
+  usergroup-id id)
 
 (defapi delete-an-external-user-group
   "Delete an external user group"
   :DELETE
   "/api/usergroups/%s/external_usergroups/%s"
-  usergroup_id id)
+  usergroup-id id)
 
 (defapi list-all-fact-values
   "List all fact values"
@@ -722,7 +722,7 @@
   "List all fact values of a given host"
   :GET
   "/api/hosts/%s/facts"
-  host_id)
+  host-id)
 
 (defapi list-all-filters
   "List all filters"
@@ -766,37 +766,37 @@
   "List all Puppet class IDs for host"
   :GET
   "/api/hosts/%s/puppetclass_ids"
-  host_id)
+  host-id)
 
 (defapi add-a-puppet-class-to-host
   "Add a Puppet class to host"
   :POST
   "/api/hosts/%s/puppetclass_ids"
-  host_id)
+  host-id)
 
 (defapi remove-a-puppet-class-from-host
   "Remove a Puppet class from host"
   :DELETE
   "/api/hosts/%s/puppetclass_ids/%s"
-  host_id id)
+  host-id id)
 
 (defapi list-all-puppet-class-ids-for-host-group
   "List all Puppet class IDs for host group"
   :GET
   "/api/hostgroups/%s/puppetclass_ids"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi add-a-puppet-class-to-host-group
   "Add a Puppet class to host group"
   :POST
   "/api/hostgroups/%s/puppetclass_ids"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi remove-a-puppet-class-from-host-group
   "Remove a Puppet class from host group"
   :DELETE
   "/api/hostgroups/%s/puppetclass_ids/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi list-all-host-groups
   "List all host groups"
@@ -807,19 +807,19 @@
   "List all host groups for a Puppet class"
   :GET
   "/api/puppetclasses/%s/hostgroups"
-  puppetclass_id)
+  puppetclass-id)
 
 (defapi list-all-host-groups-per-location
   "List all host groups per location"
   :GET
   "/api/locations/%s/hostgroups"
-  location_id)
+  location-id)
 
 (defapi list-all-host-groups-per-organization
   "List all host groups per organization"
   :GET
   "/api/organizations/%s/hostgroups"
-  organization_id)
+  organization-id)
 
 (defapi show-a-host-group
   "Show a host group"
@@ -865,25 +865,25 @@
   "List all hosts for a host group"
   :GET
   "/api/hostgroups/%s/hosts"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi list-hosts-per-location
   "List hosts per location"
   :GET
   "/api/locations/%s/hosts"
-  location_id)
+  location-id)
 
 (defapi list-hosts-per-organization
   "List hosts per organization"
   :GET
   "/api/organizations/%s/hosts"
-  organization_id)
+  organization-id)
 
 (defapi list-hosts-per-environment
   "List hosts per environment"
   :GET
   "/api/environments/%s/hosts"
-  environment_id)
+  environment-id)
 
 (defapi show-a-host
   "Show a host"
@@ -999,97 +999,97 @@
   "List all images for a compute resource"
   :GET
   "/api/compute_resources/%s/images"
-  compute_resource_id)
+  compute-resource-id)
 
 (defapi list-all-images-for-operating-system
   "List all images for operating system"
   :GET
   "/api/operatingsystems/%s/images"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-all-images-for-architecture
   "List all images for architecture"
   :GET
   "/api/architectures/%s/images"
-  architecture_id)
+  architecture-id)
 
 (defapi show-an-image
   "Show an image"
   :GET
   "/api/compute_resources/%s/images/%s"
-  compute_resource_id id)
+  compute-resource-id id)
 
 (defapi show-an-image
   "Show an image"
   :GET
   "/api/operatingsystems/%s/images/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi show-an-image
   "Show an image"
   :GET
   "/api/architectures/%s/images/%s"
-  architecture_id id)
+  architecture-id id)
 
 (defapi create-an-image
   "Create an image"
   :POST
   "/api/compute_resources/%s/images"
-  compute_resource_id)
+  compute-resource-id)
 
 (defapi update-an-image
   "Update an image"
   :PUT
   "/api/compute_resources/%s/images/%s"
-  compute_resource_id id)
+  compute-resource-id id)
 
 (defapi delete-an-image
   "Delete an image"
   :DELETE
   "/api/compute_resources/%s/images/%s"
-  compute_resource_id id)
+  compute-resource-id id)
 
 (defapi list-all-interfaces-for-host
   "List all interfaces for host"
   :GET
   "/api/hosts/%s/interfaces"
-  host_id)
+  host-id)
 
 (defapi list-all-interfaces-for-domain
   "List all interfaces for domain"
   :GET
   "/api/domains/%s/interfaces"
-  domain_id)
+  domain-id)
 
 (defapi list-all-interfaces-for-subnet
   "List all interfaces for subnet"
   :GET
   "/api/subnets/%s/interfaces"
-  subnet_id)
+  subnet-id)
 
 (defapi show-an-interface-for-host
   "Show an interface for host"
   :GET
   "/api/hosts/%s/interfaces/%s"
-  host_id id)
+  host-id id)
 
 (defapi create-an-interface-on-a-host
   "Create an interface on a host"
   :POST
   "/api/hosts/%s/interfaces"
-  host_id)
+  host-id)
 
 (defapi update-a-host-interface
   "Update a host interface"
   :PUT
   "/api/hosts/%s/interfaces/%s"
-  host_id id)
+  host-id id)
 
 (defapi delete-a-host-interface
   "Delete a host interface"
   :DELETE
   "/api/hosts/%s/interfaces/%s"
-  host_id id)
+  host-id id)
 
 (defapi list-all-locations
   "List all locations"
@@ -1139,19 +1139,19 @@
   "List all media for an operating system"
   :GET
   "/api/operatingsystems/%s/media"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-all-media-per-location
   "List all media per location"
   :GET
   "/api/locations/%s/media"
-  location_id)
+  location-id)
 
 (defapi list-all-media-per-organization
   "List all media per organization"
   :GET
   "/api/organizations/%s/media"
-  organization_id)
+  organization-id)
 
 (defapi show-a-medium
   "Show a medium"
@@ -1213,31 +1213,31 @@
   "List all operating systems for nested architecture"
   :GET
   "/api/architectures/%s/operatingsystems"
-  architecture_id)
+  architecture-id)
 
 (defapi list-all-operating-systems-for-nested-medium
   "List all operating systems for nested medium"
   :GET
   "/api/media/%s/operatingsystems"
-  medium_id)
+  medium-id)
 
 (defapi list-all-operating-systems-for-nested-partition-table
   "List all operating systems for nested partition table"
   :GET
   "/api/ptables/%s/operatingsystems"
-  ptable_id)
+  ptable-id)
 
 (defapi list-all-operating-systems-for-nested-provisioning-template
   "List all operating systems for nested provisioning template"
   :GET
   "/api/config_templates/%s/operatingsystems"
-  config_template_id)
+  config-template-id)
 
 (defapi list-all-operating-systems-for-nested-provisioning-template
   "List all operating systems for nested provisioning template"
   :GET
   "/api/provisioning_templates/%s/operatingsystems"
-  provisioning_template_id)
+  provisioning-template-id)
 
 (defapi show-an-operating-system
   "Show an operating system"
@@ -1300,355 +1300,355 @@
   "List default templates combinations for an operating system"
   :GET
   "/api/operatingsystems/%s/os_default_templates"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-operating-systems-where-this-template-is-set-as-a-default
   "List operating systems where this template is set as a default"
   :GET
   "/api/config_templates/%s/os_default_templates"
-  config_template_id)
+  config-template-id)
 
 (defapi list-operating-systems-where-this-template-is-set-as-a-default
   "List operating systems where this template is set as a default"
   :GET
   "/api/provisioning_templates/%s/os_default_templates"
-  provisioning_template_id)
+  provisioning-template-id)
 
 (defapi show-a-default-template-combination-for-an-operating-system
   "Show a default template combination for an operating system"
   :GET
   "/api/operatingsystems/%s/os_default_templates/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi create-a-default-template-combination-for-an-operating-system
   "Create a default template combination for an operating system"
   :POST
   "/api/operatingsystems/%s/os_default_templates"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi update-a-default-template-combination-for-an-operating-system
   "Update a default template combination for an operating system"
   :PUT
   "/api/operatingsystems/%s/os_default_templates/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi delete-a-default-template-combination-for-an-operating-system
   "Delete a default template combination for an operating system"
   :DELETE
   "/api/operatingsystems/%s/os_default_templates/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi list-of-override-values-for-a-specific-smart-variable
   "List of override values for a specific smart variable"
   :GET
   "/api/smart_variables/%s/override_values"
-  smart_variable_id)
+  smart-variable-id)
 
 (defapi list-of-override-values-for-a-specific-smart-class-parameter
   "List of override values for a specific smart class parameter"
   :GET
   "/api/smart_class_parameters/%s/override_values"
-  smart_class_parameter_id)
+  smart-class-parameter-id)
 
 (defapi show-an-override-value-for-a-specific-smart-variable
   "Show an override value for a specific smart variable"
   :GET
   "/api/smart_variables/%s/override_values/%s"
-  smart_variable_id id)
+  smart-variable-id id)
 
 (defapi show-an-override-value-for-a-specific-smart-class-parameter
   "Show an override value for a specific smart class parameter"
   :GET
   "/api/smart_class_parameters/%s/override_values/%s"
-  smart_class_parameter_id id)
+  smart-class-parameter-id id)
 
 (defapi create-an-override-value-for-a-specific-smart-variable
   "Create an override value for a specific smart variable"
   :POST
   "/api/smart_variables/%s/override_values"
-  smart_variable_id)
+  smart-variable-id)
 
 (defapi create-an-override-value-for-a-specific-smart-class-parameter
   "Create an override value for a specific smart class parameter"
   :POST
   "/api/smart_class_parameters/%s/override_values"
-  smart_class_parameter_id)
+  smart-class-parameter-id)
 
 (defapi update-an-override-value-for-a-specific-smart-variable
   "Update an override value for a specific smart variable"
   :PUT
   "/api/smart_variables/%s/override_values/%s"
-  smart_variable_id id)
+  smart-variable-id id)
 
 (defapi update-an-override-value-for-a-specific-smart-class-parameter
   "Update an override value for a specific smart class parameter"
   :PUT
   "/api/smart_class_parameters/%s/override_values/%s"
-  smart_class_parameter_id id)
+  smart-class-parameter-id id)
 
 (defapi delete-an-override-value-for-a-specific-smart-variable
   "Delete an override value for a specific smart variable"
   :DELETE
   "/api/smart_variables/%s/override_values/%s"
-  smart_variable_id id)
+  smart-variable-id id)
 
 (defapi delete-an-override-value-for-a-specific-smart-class-parameter
   "Delete an override value for a specific smart class parameter"
   :DELETE
   "/api/smart_class_parameters/%s/override_values/%s"
-  smart_class_parameter_id id)
+  smart-class-parameter-id id)
 
 (defapi list-all-parameters-for-a-host
   "List all parameters for a host"
   :GET
   "/api/hosts/%s/parameters"
-  host_id)
+  host-id)
 
 (defapi list-all-parameters-for-a-host-group
   "List all parameters for a host group"
   :GET
   "/api/hostgroups/%s/parameters"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi list-all-parameters-for-a-domain
   "List all parameters for a domain"
   :GET
   "/api/domains/%s/parameters"
-  domain_id)
+  domain-id)
 
 (defapi list-all-parameters-for-an-operating-system
   "List all parameters for an operating system"
   :GET
   "/api/operatingsystems/%s/parameters"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-all-parameters-for-a-location
   "List all parameters for a location"
   :GET
   "/api/locations/%s/parameters"
-  location_id)
+  location-id)
 
 (defapi list-all-parameters-for-an-organization
   "List all parameters for an organization"
   :GET
   "/api/organizations/%s/parameters"
-  organization_id)
+  organization-id)
 
 (defapi list-all-parameters-for-a-subnet
   "List all parameters for a subnet"
   :GET
   "/api/subnets/%s/parameters"
-  subnet_id)
+  subnet-id)
 
 (defapi show-a-nested-parameter-for-a-host
   "Show a nested parameter for a host"
   :GET
   "/api/hosts/%s/parameters/%s"
-  host_id id)
+  host-id id)
 
 (defapi show-a-nested-parameter-for-a-host-group
   "Show a nested parameter for a host group"
   :GET
   "/api/hostgroups/%s/parameters/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi show-a-nested-parameter-for-a-domain
   "Show a nested parameter for a domain"
   :GET
   "/api/domains/%s/parameters/%s"
-  domain_id id)
+  domain-id id)
 
 (defapi show-a-nested-parameter-for-an-operating-system
   "Show a nested parameter for an operating system"
   :GET
   "/api/operatingsystems/%s/parameters/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi show-a-nested-parameter-for-a-location
   "Show a nested parameter for a location"
   :GET
   "/api/locations/%s/parameters/%s"
-  location_id id)
+  location-id id)
 
 (defapi show-a-nested-parameter-for-an-organization
   "Show a nested parameter for an organization"
   :GET
   "/api/organizations/%s/parameters/%s"
-  organization_id id)
+  organization-id id)
 
 (defapi show-a-nested-parameter-for-a-subnet
   "Show a nested parameter for a subnet"
   :GET
   "/api/subnets/%s/parameters/%s"
-  subnet_id id)
+  subnet-id id)
 
 (defapi create-a-nested-parameter-for-a-host
   "Create a nested parameter for a host"
   :POST
   "/api/hosts/%s/parameters"
-  host_id)
+  host-id)
 
 (defapi create-a-nested-parameter-for-a-host-group
   "Create a nested parameter for a host group"
   :POST
   "/api/hostgroups/%s/parameters"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi create-a-nested-parameter-for-a-domain
   "Create a nested parameter for a domain"
   :POST
   "/api/domains/%s/parameters"
-  domain_id)
+  domain-id)
 
 (defapi create-a-nested-parameter-for-an-operating-system
   "Create a nested parameter for an operating system"
   :POST
   "/api/operatingsystems/%s/parameters"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi create-a-nested-parameter-for-a-location
   "Create a nested parameter for a location"
   :POST
   "/api/locations/%s/parameters"
-  location_id)
+  location-id)
 
 (defapi create-a-nested-parameter-for-an-organization
   "Create a nested parameter for an organization"
   :POST
   "/api/organizations/%s/parameters"
-  organization_id)
+  organization-id)
 
 (defapi create-a-nested-parameter-for-a-subnet
   "Create a nested parameter for a subnet"
   :POST
   "/api/subnets/%s/parameters"
-  subnet_id)
+  subnet-id)
 
 (defapi update-a-nested-parameter-for-a-host
   "Update a nested parameter for a host"
   :PUT
   "/api/hosts/%s/parameters/%s"
-  host_id id)
+  host-id id)
 
 (defapi update-a-nested-parameter-for-a-host-group
   "Update a nested parameter for a host group"
   :PUT
   "/api/hostgroups/%s/parameters/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi update-a-nested-parameter-for-a-domain
   "Update a nested parameter for a domain"
   :PUT
   "/api/domains/%s/parameters/%s"
-  domain_id id)
+  domain-id id)
 
 (defapi update-a-nested-parameter-for-an-operating-system
   "Update a nested parameter for an operating system"
   :PUT
   "/api/operatingsystems/%s/parameters/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi update-a-nested-parameter-for-a-location
   "Update a nested parameter for a location"
   :PUT
   "/api/locations/%s/parameters/%s"
-  location_id id)
+  location-id id)
 
 (defapi update-a-nested-parameter-for-an-organization
   "Update a nested parameter for an organization"
   :PUT
   "/api/organizations/%s/parameters/%s"
-  organization_id id)
+  organization-id id)
 
 (defapi update-a-nested-parameter-for-a-subnet
   "Update a nested parameter for a subnet"
   :PUT
   "/api/subnets/%s/parameters/%s"
-  subnet_id id)
+  subnet-id id)
 
 (defapi delete-a-nested-parameter-for-a-host
   "Delete a nested parameter for a host"
   :DELETE
   "/api/hosts/%s/parameters/%s"
-  host_id id)
+  host-id id)
 
 (defapi delete-a-nested-parameter-for-a-host-group
   "Delete a nested parameter for a host group"
   :DELETE
   "/api/hostgroups/%s/parameters/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi delete-a-nested-parameter-for-a-domain
   "Delete a nested parameter for a domain"
   :DELETE
   "/api/domains/%s/parameters/%s"
-  domain_id id)
+  domain-id id)
 
 (defapi delete-a-nested-parameter-for-an-operating-system
   "Delete a nested parameter for an operating system"
   :DELETE
   "/api/operatingsystems/%s/parameters/%s"
-  operatingsystem_id id)
+  operatingsystem-id id)
 
 (defapi delete-a-nested-parameter-for-a-location
   "Delete a nested parameter for a location"
   :DELETE
   "/api/locations/%s/parameters/%s"
-  location_id id)
+  location-id id)
 
 (defapi delete-a-nested-parameter-for-an-organization
   "Delete a nested parameter for an organization"
   :DELETE
   "/api/organizations/%s/parameters/%s"
-  organization_id id)
+  organization-id id)
 
 (defapi delete-a-nested-parameter-for-a-subnet
   "Delete a nested parameter for a subnet"
   :DELETE
   "/api/subnets/%s/parameters/%s"
-  subnet_id id)
+  subnet-id id)
 
 (defapi delete-all-nested-parameters-for-a-host
   "Delete all nested parameters for a host"
   :DELETE
   "/api/hosts/%s/parameters"
-  host_id)
+  host-id)
 
 (defapi delete-all-nested-parameters-for-a-host-group
   "Delete all nested parameters for a host group"
   :DELETE
   "/api/hostgroups/%s/parameters"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi delete-all-nested-parameters-for-a-domain
   "Delete all nested parameters for a domain"
   :DELETE
   "/api/domains/%s/parameters"
-  domain_id)
+  domain-id)
 
 (defapi delete-all-nested-parameters-for-an-operating-system
   "Delete all nested parameters for an operating system"
   :DELETE
   "/api/operatingsystems/%s/parameters"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi delete-all-nested-parameter-for-a-location
   "Delete all nested parameter for a location"
   :DELETE
   "/api/locations/%s/parameters"
-  location_id)
+  location-id)
 
 (defapi delete-all-nested-parameter-for-an-organization
   "Delete all nested parameter for an organization"
   :DELETE
   "/api/organizations/%s/parameters"
-  organization_id)
+  organization-id)
 
 (defapi delete-all-nested-parameters-for-a-subnet
   "Delete all nested parameters for a subnet"
   :DELETE
   "/api/subnets/%s/parameters"
-  subnet_id)
+  subnet-id)
 
 (defapi list-all-permissions
   "List all permissions"
@@ -1670,25 +1670,25 @@
   "List all Personal Access Tokens for a user"
   :GET
   "/api/users/%s/personal_access_tokens"
-  user_id)
+  user-id)
 
 (defapi show-a-personal-access-token-for-a-user
   "Show a Personal Access Token for a user"
   :GET
   "/api/users/%s/personal_access_tokens/%s"
-  user_id id)
+  user-id id)
 
 (defapi create-a-personal-access-token-for-a-user
   "Create a Personal Access Token for a user"
   :POST
   "/api/users/%s/personal_access_tokens"
-  user_id)
+  user-id)
 
 (defapi revoke-a-personal-access-token-for-a-user
   "Revoke a Personal Access Token for a user"
   :DELETE
   "/api/users/%s/personal_access_tokens/%s"
-  user_id id)
+  user-id id)
 
 (defapi list-installed-plugins
   "List installed plugins"
@@ -1704,19 +1704,19 @@
   "List provisioning templates per operating system"
   :GET
   "/api/operatingsystems/%s/provisioning_templates"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-provisioning-templates-per-location
   "List provisioning templates per location"
   :GET
   "/api/locations/%s/provisioning_templates"
-  location_id)
+  location-id)
 
 (defapi list-provisioning-templates-per-organization
   "List provisioning templates per organization"
   :GET
   "/api/organizations/%s/provisioning_templates"
-  organization_id)
+  organization-id)
 
 (defapi show-provisioning-template-details
   "Show provisioning template details"
@@ -1777,19 +1777,19 @@
   "List all partition tables for an operating system"
   :GET
   "/api/operatingsystems/%s/ptables"
-  operatingsystem_id)
+  operatingsystem-id)
 
 (defapi list-all-partition-tables-per-location
   "List all partition tables per location"
   :GET
   "/api/locations/%s/ptables"
-  location_id)
+  location-id)
 
 (defapi list-all-partition-tables-per-organization
   "List all partition tables per organization"
   :GET
   "/api/organizations/%s/ptables"
-  organization_id)
+  organization-id)
 
 (defapi show-a-partition-table
   "Show a partition table"
@@ -1851,19 +1851,19 @@
   "List all Puppet classes for a host"
   :GET
   "/api/hosts/%s/puppetclasses"
-  host_id)
+  host-id)
 
 (defapi list-all-puppet-classes-for-a-host-group
   "List all Puppet classes for a host group"
   :GET
   "/api/hostgroups/%s/puppetclasses"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi list-all-puppet-classes-for-an-environment
   "List all Puppet classes for an environment"
   :GET
   "/api/environments/%s/puppetclasses"
-  environment_id)
+  environment-id)
 
 (defapi show-a-puppet-class
   "Show a Puppet class"
@@ -1875,19 +1875,19 @@
   "Show a Puppet class for host"
   :GET
   "/api/hosts/%s/puppetclasses/%s"
-  host_id id)
+  host-id id)
 
 (defapi show-a-puppet-class-for-a-host-group
   "Show a Puppet class for a host group"
   :GET
   "/api/hostgroups/%s/puppetclasses/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi show-a-puppet-class-for-an-environment
   "Show a Puppet class for an environment"
   :GET
   "/api/environments/%s/puppetclasses/%s"
-  environment_id id)
+  environment-id id)
 
 (defapi create-a-puppet-class
   "Create a Puppet class"
@@ -1943,13 +1943,13 @@
   "List all report templates per location"
   :GET
   "/api/locations/%s/report_templates"
-  location_id)
+  location-id)
 
 (defapi list-all-report-templates-per-organization
   "List all report templates per organization"
   :GET
   "/api/organizations/%s/report_templates"
-  organization_id)
+  organization-id)
 
 (defapi show-a-report-template
   "Show a report template"
@@ -2028,7 +2028,7 @@
   "Show the last report for a host"
   :GET
   "/api/hosts/%s/reports/last"
-  host_id)
+  host-id)
 
 (defapi list-all-roles
   "List all roles"
@@ -2090,31 +2090,31 @@
   "List of smart class parameters for a specific host"
   :GET
   "/api/hosts/%s/smart_class_parameters"
-  host_id)
+  host-id)
 
 (defapi list-of-smart-class-parameters-for-a-specific-host-group
   "List of smart class parameters for a specific host group"
   :GET
   "/api/hostgroups/%s/smart_class_parameters"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi list-of-smart-class-parameters-for-a-specific-puppet-class
   "List of smart class parameters for a specific Puppet class"
   :GET
   "/api/puppetclasses/%s/smart_class_parameters"
-  puppetclass_id)
+  puppetclass-id)
 
 (defapi list-of-smart-class-parameters-for-a-specific-environment
   "List of smart class parameters for a specific environment"
   :GET
   "/api/environments/%s/smart_class_parameters"
-  environment_id)
+  environment-id)
 
 (defapi list-of-smart-class-parameters-for-a-specific-environment-puppet-class-combination
   "List of smart class parameters for a specific environment/Puppet class combination"
   :GET
   "/api/environments/%s/puppetclasses/%s/smart_class_parameters"
-  environment_id puppetclass_id)
+  environment-id puppetclass-id)
 
 (defapi show-a-smart-class-parameter
   "Show a smart class parameter"
@@ -2138,13 +2138,13 @@
   "Import puppet classes from puppet proxy for an environment"
   :POST
   "/api/smart_proxies/%s/environments/%s/import_puppetclasses"
-  smart_proxy_id id)
+  smart-proxy-id id)
 
 (defapi import-puppet-classes-from-puppet-proxy-for-an-environment
   "Import puppet classes from puppet proxy for an environment"
   :POST
   "/api/environments/%s/smart_proxies/%s/import_puppetclasses"
-  environment_id id)
+  environment-id id)
 
 (defapi list-all-smart-proxies
   "List all smart proxies"
@@ -2189,19 +2189,19 @@
   "List of smart variables for a specific host"
   :GET
   "/api/hosts/%s/smart_variables"
-  host_id)
+  host-id)
 
 (defapi list-of-smart-variables-for-a-specific-host-group
   "List of smart variables for a specific host group"
   :GET
   "/api/hostgroups/%s/smart_variables"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi list-of-smart-variables-for-a-specific-puppet-class
   "List of smart variables for a specific Puppet class"
   :GET
   "/api/puppetclasses/%s/smart_variables"
-  puppetclass_id)
+  puppetclass-id)
 
 (defapi show-a-smart-variable
   "Show a smart variable"
@@ -2230,25 +2230,25 @@
   "List all SSH keys for a user"
   :GET
   "/api/users/%s/ssh_keys"
-  user_id)
+  user-id)
 
 (defapi show-an-ssh-key-from-a-user
   "Show an SSH key from a user"
   :GET
   "/api/users/%s/ssh_keys/%s"
-  user_id id)
+  user-id id)
 
 (defapi add-an-ssh-key-for-a-user
   "Add an SSH key for a user"
   :POST
   "/api/users/%s/ssh_keys"
-  user_id)
+  user-id)
 
 (defapi delete-an-ssh-key-for-a-user
   "Delete an SSH key for a user"
   :DELETE
   "/api/users/%s/ssh_keys/%s"
-  user_id id)
+  user-id id)
 
 (defapi get-statistics
   "Get statistics"
@@ -2264,19 +2264,19 @@
   "List of subnets for a domain"
   :GET
   "/api/domains/%s/subnets"
-  domain_id)
+  domain-id)
 
 (defapi list-of-subnets-per-location
   "List of subnets per location"
   :GET
   "/api/locations/%s/subnets"
-  location_id)
+  location-id)
 
 (defapi list-of-subnets-per-organization
   "List of subnets per organization"
   :GET
   "/api/organizations/%s/subnets"
-  organization_id)
+  organization-id)
 
 (defapi show-a-subnet
   "Show a subnet"
@@ -2311,31 +2311,31 @@
   "List of table preferences for a user"
   :GET
   "/api/users/%s/table_preferences"
-  user_id)
+  user-id)
 
 (defapi table-preference-details-of-a-given-table
   "Table preference details of a given table"
   :GET
   "/api/users/%s/table_preferences/%s"
-  user_id name)
+  user-id name)
 
 (defapi creates-a-table-preference-for-a-given-table
   "Creates a table preference for a given table"
   :POST
   "/api/users/%s/table_preferences"
-  user_id)
+  user-id)
 
 (defapi updates-a-table-preference-for-a-given-table
   "Updates a table preference for a given table"
   :PUT
   "/api/users/%s/table_preferences/%s"
-  user_id name)
+  user-id name)
 
 (defapi delete-a-table-preference-for-a-given-table
   "Delete a table preference for a given table"
   :DELETE
   "/api/users/%s/table_preferences/%s"
-  user_id name)
+  user-id name)
 
 (defapi list-all-tasks-for-a-given-orchestration-event
   "List all tasks for a given orchestration event"
@@ -2347,37 +2347,37 @@
   "List template combination"
   :GET
   "/api/provisioning_templates/%s/template_combinations"
-  provisioning_template_id)
+  provisioning-template-id)
 
 (defapi list-template-combination
   "List template combination"
   :GET
   "/api/hostgroups/%s/template_combinations"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi list-template-combination
   "List template combination"
   :GET
   "/api/environments/%s/template_combinations"
-  environment_id)
+  environment-id)
 
 (defapi add-a-template-combination
   "Add a template combination"
   :POST
   "/api/provisioning_templates/%s/template_combinations"
-  provisioning_template_id)
+  provisioning-template-id)
 
 (defapi add-a-template-combination
   "Add a template combination"
   :POST
   "/api/hostgroups/%s/template_combinations"
-  hostgroup_id)
+  hostgroup-id)
 
 (defapi add-a-template-combination
   "Add a template combination"
   :POST
   "/api/environments/%s/template_combinations"
-  environment_id)
+  environment-id)
 
 (defapi show-template-combination
   "Show template combination"
@@ -2389,37 +2389,37 @@
   "Show template combination"
   :GET
   "/api/provisioning_templates/%s/template_combinations/%s"
-  provisioning_template_id id)
+  provisioning-template-id id)
 
 (defapi show-template-combination
   "Show template combination"
   :GET
   "/api/hostgroups/%s/template_combinations/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi show-template-combination
   "Show template combination"
   :GET
   "/api/environments/%s/template_combinations/%s"
-  environment_id id)
+  environment-id id)
 
 (defapi update-template-combination
   "Update template combination"
   :PUT
   "/api/provisioning_templates/%s/template_combinations/%s"
-  provisioning_template_id id)
+  provisioning-template-id id)
 
 (defapi update-template-combination
   "Update template combination"
   :PUT
   "/api/hostgroups/%s/template_combinations/%s"
-  hostgroup_id id)
+  hostgroup-id id)
 
 (defapi update-template-combination
   "Update template combination"
   :PUT
   "/api/environments/%s/template_combinations/%s"
-  environment_id id)
+  environment-id id)
 
 (defapi delete-a-template-combination
   "Delete a template combination"
@@ -2431,31 +2431,31 @@
   "List template inputs"
   :GET
   "/api/templates/%s/template_inputs"
-  template_id)
+  template-id)
 
 (defapi show-template-input-details
   "Show template input details"
   :GET
   "/api/templates/%s/template_inputs/%s"
-  template_id id)
+  template-id id)
 
 (defapi create-a-template-input
   "Create a template input"
   :POST
   "/api/templates/%s/template_inputs"
-  template_id)
+  template-id)
 
 (defapi delete-a-template-input
   "Delete a template input"
   :DELETE
   "/api/templates/%s/template_inputs/%s"
-  template_id id)
+  template-id id)
 
 (defapi update-a-template-input
   "Update a template input"
   :PUT
   "/api/templates/%s/template_inputs/%s"
-  template_id id)
+  template-id id)
 
 (defapi list-all-template-kinds
   "List all template kinds"
@@ -2521,37 +2521,37 @@
   "List all users for LDAP authentication source"
   :GET
   "/api/auth_source_ldaps/%s/users"
-  auth_source_ldap_id)
+  auth-source-ldap-id)
 
 (defapi list-all-users-for-external-authentication-source
   "List all users for external authentication source"
   :GET
   "/api/auth_source_externals/%s/users"
-  auth_source_external_id)
+  auth-source-external-id)
 
 (defapi list-all-users-for-user-group
   "List all users for user group"
   :GET
   "/api/usergroups/%s/users"
-  usergroup_id)
+  usergroup-id)
 
 (defapi list-all-users-for-role
   "List all users for role"
   :GET
   "/api/roles/%s/users"
-  role_id)
+  role-id)
 
 (defapi list-all-users-for-location
   "List all users for location"
   :GET
   "/api/locations/%s/users"
-  location_id)
+  location-id)
 
 (defapi list-all-users-for-organization
   "List all users for organization"
   :GET
   "/api/organizations/%s/users"
-  organization_id)
+  organization-id)
 
 (defapi show-a-user
   "Show a user"

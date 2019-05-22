@@ -20,7 +20,7 @@ sed -i -re '/DEPRECATED/d' $methodfile
 
 # 3. reformat the file
 cat $methodfile | while read method url desc; do
-    args=(`echo $url | egrep -o ":\w+" | tr -d :` )
+    args=(`echo $url | egrep -o ":\w+" | tr -d : | tr _ -` )
     argurl=$(echo "$url" | sed -re 's#:\w+#%s#g')
     if [ -z "$desc" ]; then
         case "$method" in
