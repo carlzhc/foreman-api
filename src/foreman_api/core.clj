@@ -25,17 +25,30 @@
     :basic-auth (when-let [v (env :foreman-auth)]
                   (take 2 (str/split v #":")))}))
 
+
 (def RESOURCE-TYPES
   {:architectures "name"
+   [:operatingsystems :architectures] "name"
    :audits "auditable_name"
+   [:hosts :audits] "auditable_name"
    :auth-source-externals "name"
+   [:locations :auth-source-externals] "name"
+   [:organizations :auth-source-externals] "name"
    :auth-source-internals "name"
    :auth-source-ldaps "name"
+   [:locations :auth-source-ldaps] "name"
+   [:organizations :auth-source-ldaps] "name"
    :auth-sources "name"
-;;   :autosign "name"
+   ;;   :autosign "name"
+   [:smart-proxies :autosign] "name"
    :bookmarks "name"
    :common-parameters "name"
-;;   :compute-attributes "name"
+   ;;   :compute-attributes "name"
+   [:computer-resources :computer-profiles :computer-attributes] nil
+   [:computer-profiles :computer-resources :computer-attributes] nil
+   [:computer-resources :computer-attributes] nil
+   [:computer-profiles :computer-attributes] nil
+   :computer-attributes nil
    :compute-profiles "name"
    :compute-resources "name"
    :config-groups "name"
@@ -44,16 +57,27 @@
    :dashboard "name"
    :domains "name"
    :environments "name"
-;;   :external-usergroups "name"
-;;   :fact-values "name"
+   ;;   :external-usergroups "name"
+   [:usergroups :external-usergroups] "name"
+   [:auth-source-ldaps :external-usergroups] "name"
+   ;;   :fact-values "name"
+   :fact-values "name"
+   [:hosts :fact-values] "name"
    :filters "resource_type"
 ;;   :home "name"
-;;   :host-classes "name"
-;;   :hostgroup-classes "name"
+   ;;   :host-classes "name"
+   [:hosts :puppetclass-ids] "id"
+   ;;   :hostgroup-classes "name"
+   [:hostgroups :puppetclass-ids] "id"
    :hostgroups "name"
+   [:puppetclasses :hostgroups] "name"
+   [:locations :hostgroups] "name"
+   [:organizations :hostgroups] "name"
+   [:hostgroups :rebuild-config] nil
    :hosts "name"
    :http-proxies "name"
 ;;   :images "name"
+
 ;;   :interfaces "name"
    :locations "name"
    :mail-notifications "name"
@@ -89,8 +113,10 @@
    :template-kinds "name"
    :trends "name"
    :usergroups "name"
-   :users "login"})
+   :users "login"
+   [:auth-source-ldaps :users] "login"
 
+   })
 
 (def ^:dynamic *CACHE*
   "Cache the result of list-resources"
