@@ -1,17 +1,20 @@
 (ns foreman-api.api
   (:require [foreman-api.connection :refer :all]
             [clojure.string :as str]
+            [clojure.pprint :refer [pprint]]
             [clojure.walk :as walk]
             [org.httpkit.client :as http]
             [environ.core :refer [env]]
             [clojure.data.json :as json]))
 
 (def ^:dynamic *PRE-API-CALL*
-  "Function to be called before calling API"
+  "Function to be called before calling API.
+  Args: parameter-map & args"
   (atom (constantly true)))
 
 (def ^:dynamic *POST-API-CALL*
-  "Function to be called after calling API"
+  "Function to be called after calling API.
+  Args: api-return parameter-map & args"
   (atom (constantly true)))
 
 (defmacro defapi
@@ -30,8 +33,8 @@
     `(defn ~name
        ~desc
        [~@args & {fail# :fail :as params#}]
-       {:pre [(@*PRE-API-CALL* ~@args params#)]
-        :post [(@*POST-API-CALL* ~@args params#)]}
+       {:pre [(@*PRE-API-CALL* params# ~@args)]
+        :post [(@*POST-API-CALL* ~(symbol "%") params# ~@args)]}
        (let [url# (format (str @*HOST* ~http-url-pattern) ~@args)
              formatted-params# (walk/postwalk
                                 #(if (keyword? %)
