@@ -23,17 +23,3 @@
     :basic-auth (when-let [v (env :foreman-auth)]
                   (take 2 (str/split v #":")))}))
 
-
-(def ^:dynamic *CACHE*
-  "Cache the result of list-resources"
-  (atom {}))
-
-(defn clear-cache
-  "Reset the CACHE to empty state"
-  []
-  (reset! *CACHE* {}))
-
-(defn update-cache
-  "Update the cache depending on the arguments"
-  [resource content]
-  (swap! *CACHE* assoc resource content))
