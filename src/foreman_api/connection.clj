@@ -1,6 +1,5 @@
 (ns foreman-api.connection
   (:require [clojure.string :as str]
-            [org.httpkit.client :as http]
             [environ.core :refer [env]]))
 
 (def ^:dynamic *HOST*
