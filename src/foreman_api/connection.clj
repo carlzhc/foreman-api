@@ -21,4 +21,3 @@
                  true)
     :basic-auth (when-let [v (env :foreman-auth)]
                   (take 2 (str/split v #":")))}))
-

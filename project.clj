@@ -7,5 +7,8 @@
                  [org.clojure/data.json "0.2.6"]
                  [http-kit "2.3.0"]
                  [environ "1.1.0"]
-                 [hickory "0.7.1"]]
-  :repl-options {:init-ns foreman-api.core})
+                 [hickory "0.7.1"]
+                 [com.taoensso/timbre "4.10.0"]]
+  :repl-options {:init-ns foreman-api.core}
+  :main ^:skip-aot foreman-api.make-api-defs
+  :profiles {:uberjar {:aot :all}})
