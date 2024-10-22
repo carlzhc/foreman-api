@@ -20,7 +20,29 @@ sed -i -re '/DEPRECATED/d' $methodfile
 
 # 3. reformat the file
 cat $methodfile | while read method url desc; do
-    args=(`echo $url | egrep -o ":\w+" | tr -d : | tr _ -` )
+    # args=(`echo $url | egrep -o ":\w+" | tr -d : | tr _ -` )
+    args=()
+    for arg in $(echo "$url" | tr / ' '); do
+        if [[ $arg != :* ]]; then
+            prearg=$arg
+            continue
+        fi
+
+        if [[ $arg = :id ]]; then
+            if [[ $prearg ]]; then
+                case "$prearg" in
+                    *statuses) p=${prearg%es} ;;
+                    *proxies) p=${prearg%ies}y ;;
+                    *ptables) p=partition_table ;;
+                    *) p=${prearg%s} ;;
+                esac
+                arg=":${p}-id"
+            fi
+        fi
+
+        args+=($(echo "${arg#:}" | tr _ -))
+    done
+
     argurl=$(echo "$url" | sed -re 's#:\w+#%s#g')
     if [ -z "$desc" ]; then
         case "$method" in

@@ -1,582 +1,392 @@
-Foreman v2  [ ca | de | en | en_GB | es | fr | gl | it | ja | ko | nl_NL | pl | pt_BR | ru | sv_SE | zh_CN | zh_TW ]
-Foreman API v2 is currently the default API version.
-
-Resources
-Architectures
-Resource	Description
-GET /api/architectures	List all architectures
-GET /api/operatingsystems/:operatingsystem_id/architectures	List all architectures for operating system
-GET /api/architectures/:id	Show an architecture
-POST /api/architectures	Create an architecture
-PUT /api/architectures/:id	Update an architecture
-DELETE /api/architectures/:id	Delete an architecture
-Audits
-Resource	Description
-GET /api/audits	List all audits
-GET /api/hosts/:host_id/audits	List all audits for a given host
-GET /api/audits/:id	Show an audit
-Auth source externals
-Resource	Description
-GET /api/auth_source_externals	List external authentication sources
-GET /api/locations/:location_id/auth_source_externals	List external authentication sources per location
-GET /api/organizations/:organization_id/auth_source_externals	List external authentication sources per organization
-GET /api/auth_source_externals/:id	Show an external authentication source
-PUT /api/auth_source_externals/:id	Update an external authentication source
-Auth source internals
-Resource	Description
-GET /api/auth_source_internals	List internal authentication sources
-GET /api/auth_source_internals/:id	Show an internal authentication source
-Auth source ldaps
-Resource	Description
-GET /api/auth_source_ldaps	List all LDAP authentication sources
-GET /api/locations/:location_id/auth_source_ldaps	List LDAP authentication sources per location
-GET /api/organizations/:organization_id/auth_source_ldaps	List LDAP authentication sources per organization
-GET /api/auth_source_ldaps/:id	Show an LDAP authentication source
-POST /api/auth_source_ldaps	Create an LDAP authentication source
-PUT /api/auth_source_ldaps/:id	Update an LDAP authentication source
-PUT /api/auth_source_ldaps/:id/test	Test LDAP connection
-DELETE /api/auth_source_ldaps/:id	Delete an LDAP authentication source
-Auth sources
-Resource	Description
-GET /api/auth_sources	List all authentication sources
-GET /api/locations/:location_id/auth_sources	List all authentication sources per location
-GET /api/organizations/:organization_id/auth_sources	List all authentication sources per organization
-Autosign
-Resource	Description
-GET /api/smart_proxies/smart_proxy_id/autosign	List all autosign entries
-POST /api/smart_proxies/:smart_proxy_id/autosign	Create autosign entry
-DELETE /api/smart_proxies/:smart_proxy_id/autosign/:id	Delete autosign entry
-Bookmarks
-Resource	Description
-GET /api/bookmarks	List all bookmarks
-GET /api/bookmarks/:id	Show a bookmark
-POST /api/bookmarks	Create a bookmark
-PUT /api/bookmarks/:id	Update a bookmark
-DELETE /api/bookmarks/:id	Delete a bookmark
-Common parameters
-Resource	Description
-GET /api/common_parameters	List all global parameters
-GET /api/common_parameters/:id	Show a global parameter
-POST /api/common_parameters	Create a global parameter
-PUT /api/common_parameters/:id	Update a global parameter
-DELETE /api/common_parameters/:id	Delete a global parameter
-Compute attributes
-Resource	Description
-POST /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes	Create a compute attributes set
-POST /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes	Create a compute attributes set
-POST /api/compute_resources/:compute_resource_id/compute_attributes	Create a compute attributes set
-POST /api/compute_profiles/:compute_profile_id/compute_attributes	Create a compute attributes set
-POST /api/compute_attributes	Create a compute attributes set
-PUT /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes/:id	Update a compute attributes set
-PUT /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes/:id	Update a compute attributes set
-PUT /api/compute_resources/:compute_resource_id/compute_attributes/:id	Update a compute attributes set
-PUT /api/compute_profiles/:compute_profile_id/compute_attributes/:id	Update a compute attributes set
-PUT /api/compute_attributes/:id	Update a compute attributes set
-Compute profiles
-Resource	Description
-GET /api/compute_profiles	List of compute profiles
-GET /api/compute_profiles/:id	Show a compute profile
-POST /api/compute_profiles	Create a compute profile
-PUT /api/compute_profiles/:id	Update a compute profile
-DELETE /api/compute_profiles/:id	Delete a compute profile
-Compute resources
-Resource	Description
-GET /api/compute_resources	List all compute resources
-GET /api/compute_resources/:id	Show a compute resource
-POST /api/compute_resources	Create a compute resource
-PUT /api/compute_resources/:id	Update a compute resource
-DELETE /api/compute_resources/:id	Delete a compute resource
-GET /api/compute_resources/:id/available_images	List available images for a compute resource
-GET /api/compute_resources/:id/available_clusters	List available clusters for a compute resource
-GET /api/compute_resources/:id/available_flavors	List available flavors for a compute resource
-GET /api/compute_resources/:id/available_folders	List available folders for a compute resource
-GET /api/compute_resources/:id/available_zones	List available zone for a compute resource
-GET /api/compute_resources/:id/available_networks	List available networks for a compute resource
-GET /api/compute_resources/:id/available_clusters/:cluster_id/available_networks	List available networks for a compute resource cluster
-GET /api/compute_resources/:id/available_clusters/:cluster_id/available_resource_pools	List resource pools for a compute resource cluster
-GET /api/compute_resources/:id/available_storage_domains	List storage domains for a compute resource
-GET /api/compute_resources/:id/available_storage_domains/:storage_domain	List attributes for a given storage domain
-GET /api/compute_resources/:id/available_storage_pods	List storage pods for a compute resource
-GET /api/compute_resources/:id/available_storage_pods/:storage_pod	List attributes for a given storage pod
-GET /api/compute_resources/:id/available_security_groups	List available security groups for a compute resource
-PUT /api/compute_resources/:id/associate	Associate VMs to Hosts
-PUT /api/compute_resources/:id/refresh_cache	Refresh Compute Resource Cache
-Config groups
-Resource	Description
-GET /api/config_groups	List of config groups
-GET /api/config_groups/:id	Show a config group
-POST /api/config_groups	Create a config group
-PUT /api/config_groups/:id	Update a config group
-DELETE /api/config_groups/:id	Delete a config group
-Config reports
-Resource	Description
-GET /api/config_reports	List all reports
-GET /api/config_reports/:id	Show a report
-POST /api/config_reports	Create a report
-DELETE /api/config_reports/:id	Delete a report
-GET /api/hosts/:host_id/config_reports/last	Show the last report for a host
-Config templates
-Resource	Description
-GET /api/config_templates	List provisioning templates
-GET /api/operatingsystems/:operatingsystem_id/config_templates	List provisioning templates per operating system
-GET /api/locations/:location_id/config_templates	List provisioning templates per location
-GET /api/organizations/:organization_id/config_templates	List provisioning templates per organization
-GET /api/config_templates/:id	Show provisioning template details
-POST /api/config_templates	Create a provisioning template
-PUT /api/config_templates/:id	Update a provisioning template
-GET /api/config_templates/revision	
-DELETE /api/config_templates/:id	Delete a provisioning template
-POST /api/config_templates/build_pxe_default	Update the default PXE menu on all configured TFTP servers
-POST /api/config_templates/:id/clone	Clone a provision template
-Dashboard
-Resource	Description
-GET /api/dashboard	Get dashboard details
-Domains
-Resource	Description
-GET /api/domains	List of domains
-GET /api/subnets/:subnet_id/domains	List of domains per subnet
-GET /api/locations/:location_id/domains	List of domains per location
-GET /api/organizations/:organization_id/domains	List of domains per organization
-GET /api/domains/:id	Show a domain
-POST /api/domains	Create a domain
-PUT /api/domains/:id	Update a domain
-DELETE /api/domains/:id	Delete a domain
-Environments
-Resource	Description
-POST /api/smart_proxies/:id/import_puppetclasses	Import puppet classes from puppet proxy
-POST /api/smart_proxies/:smart_proxy_id/environments/:id/import_puppetclasses	Import puppet classes from puppet proxy for an environment
-POST /api/environments/:environment_id/smart_proxies/:id/import_puppetclasses	Import puppet classes from puppet proxy for an environment
-GET /api/environments	List all environments
-GET /api/puppetclasses/:puppetclass_id/environments	List environments of Puppet class
-GET /api/locations/:location_id/environments	List environments per location
-GET /api/organizations/:organization_id/environments	List environments per organization
-GET /api/environments/:id	Show an environment
-POST /api/environments	Create an environment
-PUT /api/environments/:id	Update an environment
-DELETE /api/environments/:id	Delete an environment
-External usergroups
-Resource	Description
-GET /api/usergroups/:usergroup_id/external_usergroups	List all external user groups for user group
-GET /api/auth_source_ldaps/:auth_source_ldap_id/external_usergroups	List all external user groups for LDAP authentication source
-GET /api/usergroups/:usergroup_id/external_usergroups/:id	Show an external user group for user group
-GET /api/auth_source_ldaps/:auth_source_ldap_id/external_usergroups/:id	Show an external user group for LDAP authentication source
-POST /api/usergroups/:usergroup_id/external_usergroups	Create an external user group linked to a user group
-PUT /api/usergroups/:usergroup_id/external_usergroups/:id	Update external user group
-PUT /api/usergroups/:usergroup_id/external_usergroups/:id/refresh	Refresh external user group
-DELETE /api/usergroups/:usergroup_id/external_usergroups/:id	Delete an external user group
-Fact values
-Resource	Description
-GET /api/fact_values	List all fact values
-GET /api/hosts/:host_id/facts	List all fact values of a given host
-Filters
-Resource	Description
-GET /api/filters	List all filters
-GET /api/filters/:id	Show a filter
-POST /api/filters	Create a filter
-PUT /api/filters/:id	Update a filter
-DELETE /api/filters/:id	Delete a filter
-Home
-Resource	Description
-GET /api	Show available API links
-GET /api/status	Show status
-Host classes
-Resource	Description
-GET /api/hosts/:host_id/puppetclass_ids	List all Puppet class IDs for host
-POST /api/hosts/:host_id/puppetclass_ids	Add a Puppet class to host
-DELETE /api/hosts/:host_id/puppetclass_ids/:id	Remove a Puppet class from host
-Hostgroup classes
-Resource	Description
-GET /api/hostgroups/:hostgroup_id/puppetclass_ids	List all Puppet class IDs for host group
-POST /api/hostgroups/:hostgroup_id/puppetclass_ids	Add a Puppet class to host group
-DELETE /api/hostgroups/:hostgroup_id/puppetclass_ids/:id	Remove a Puppet class from host group
-Hostgroups
-Resource	Description
-GET /api/hostgroups	List all host groups
-GET /api/puppetclasses/:puppetclass_id/hostgroups	List all host groups for a Puppet class
-GET /api/locations/:location_id/hostgroups	List all host groups per location
-GET /api/organizations/:organization_id/hostgroups	List all host groups per organization
-GET /api/hostgroups/:id	Show a host group
-POST /api/hostgroups	Create a host group
-PUT /api/hostgroups/:id	Update a host group
-DELETE /api/hostgroups/:id	Delete a host group
-POST /api/hostgroups/:id/clone	Clone a host group
-PUT /api/hostgroups/:id/rebuild_config	Rebuild orchestration config
-Hosts
-Resource	Description
-GET /api/hosts	List all hosts
-GET /api/hostgroups/:hostgroup_id/hosts	List all hosts for a host group
-GET /api/locations/:location_id/hosts	List hosts per location
-GET /api/organizations/:organization_id/hosts	List hosts per organization
-GET /api/environments/:environment_id/hosts	List hosts per environment
-GET /api/hosts/:id	Show a host
-POST /api/hosts	Create a host
-PUT /api/hosts/:id	Update a host
-DELETE /api/hosts/:id	Delete a host
-GET /api/hosts/:id/enc	Get ENC values of host
-GET /api/hosts/:id/status	Get configuration status of host
-GET /api/hosts/:id/status/:type	Get status of host
-GET /api/hosts/:id/vm_compute_attributes	Get vm attributes of host
-PUT /api/hosts/:id/disassociate	Disassociate the host from a VM
-PUT /api/hosts/:id/power	Run a power operation on host
-PUT /api/hosts/:id/boot	Boot host from specified device
-POST /api/hosts/facts	Upload facts for a host, creating the host if required
-PUT /api/hosts/:id/rebuild_config	Rebuild orchestration config
-GET /api/hosts/:id/template/:kind	Preview rendered provisioning template content
-Http proxies
-Resource	Description
-GET /api/http_proxies	List of HTTP Proxies
-GET /api/http_proxies/:id	Show an HTTP Proxy
-POST /api/http_proxies	Create an HTTP Proxy
-PUT /api/http_proxies/:id	Update an HTTP Proxy
-DELETE /api/http_proxies/:id	Delete an HTTP Proxy
-Images
-Resource	Description
-GET /api/compute_resources/:compute_resource_id/images	List all images for a compute resource
-GET /api/operatingsystems/:operatingsystem_id/images	List all images for operating system
-GET /api/architectures/:architecture_id/images	List all images for architecture
-GET /api/compute_resources/:compute_resource_id/images/:id	Show an image
-GET /api/operatingsystems/:operatingsystem_id/images/:id	Show an image
-GET /api/architectures/:architecture_id/images/:id	Show an image
-POST /api/compute_resources/:compute_resource_id/images	Create an image
-PUT /api/compute_resources/:compute_resource_id/images/:id	Update an image
-DELETE /api/compute_resources/:compute_resource_id/images/:id	Delete an image
-Interfaces
-Resource	Description
-GET /api/hosts/:host_id/interfaces	List all interfaces for host
-GET /api/domains/:domain_id/interfaces	List all interfaces for domain
-GET /api/subnets/:subnet_id/interfaces	List all interfaces for subnet
-GET /api/hosts/:host_id/interfaces/:id	Show an interface for host
-POST /api/hosts/:host_id/interfaces	Create an interface on a host
-PUT /api/hosts/:host_id/interfaces/:id	Update a host's interface
-DELETE /api/hosts/:host_id/interfaces/:id	Delete a host's interface
-Locations
-Resource	Description
-GET /api/locations	List all locations
-GET /api/locations/:id	Show a location
-POST /api/locations	Create a location
-PUT /api/locations/:id	Update a location
-DELETE /api/locations/:id	Delete a location
-Mail notifications
-Resource	Description
-GET /api/mail_notifications	List of email notifications
-GET /api/mail_notifications/:id	Show an email notification
-Media
-Resource	Description
-GET /api/media	List all installation media
-GET /api/operatingsystems/:operatingsystem_id/media	List all media for an operating system
-GET /api/locations/:location_id/media	List all media per location
-GET /api/organizations/:organization_id/media	List all media per organization
-GET /api/media/:id	Show a medium
-POST /api/media	Create a medium
-PUT /api/media/:id	Update a medium
-DELETE /api/media/:id	Delete a medium
-Models
-Resource	Description
-GET /api/models	List all hardware models
-GET /api/models/:id	Show a hardware model
-POST /api/models	Create a hardware model
-PUT /api/models/:id	Update a hardware model
-DELETE /api/models/:id	Delete a hardware model
-Operating systems
-Resource	Description
-GET /api/operatingsystems	List all operating systems
-GET /api/architectures/:architecture_id/operatingsystems	List all operating systems for nested architecture
-GET /api/media/:medium_id/operatingsystems	List all operating systems for nested medium
-GET /api/ptables/:ptable_id/operatingsystems	List all operating systems for nested partition table
-GET /api/config_templates/:config_template_id/operatingsystems	List all operating systems for nested provisioning template
-GET /api/provisioning_templates/:provisioning_template_id/operatingsystems	List all operating systems for nested provisioning template
-GET /api/operatingsystems/:id	Show an operating system
-POST /api/operatingsystems	Create an operating system
-PUT /api/operatingsystems/:id	Update an operating system
-DELETE /api/operatingsystems/:id	Delete an operating system
-GET /api/operatingsystems/:id/bootfiles	List boot files for an operating system
-Organizations
-Resource	Description
-GET /api/organizations	List all organizations
-GET /api/organizations/:id	Show an organization
-POST /api/organizations	Create an organization
-PUT /api/organizations/:id	Update an organization
-DELETE /api/organizations/:id	Delete an organization
-Os default templates
-Resource	Description
-GET /api/operatingsystems/:operatingsystem_id/os_default_templates	List default templates combinations for an operating system
-GET /api/config_templates/:config_template_id/os_default_templates	List operating systems where this template is set as a default
-GET /api/provisioning_templates/:provisioning_template_id/os_default_templates	List operating systems where this template is set as a default
-GET /api/operatingsystems/:operatingsystem_id/os_default_templates/:id	Show a default template combination for an operating system
-POST /api/operatingsystems/:operatingsystem_id/os_default_templates	Create a default template combination for an operating system
-PUT /api/operatingsystems/:operatingsystem_id/os_default_templates/:id	Update a default template combination for an operating system
-DELETE /api/operatingsystems/:operatingsystem_id/os_default_templates/:id	Delete a default template combination for an operating system
-Override values
-Resource	Description
-GET /api/smart_variables/:smart_variable_id/override_values	List of override values for a specific smart variable
-GET /api/smart_class_parameters/:smart_class_parameter_id/override_values	List of override values for a specific smart class parameter
-GET /api/smart_variables/:smart_variable_id/override_values/:id	Show an override value for a specific smart variable
-GET /api/smart_class_parameters/:smart_class_parameter_id/override_values/:id	Show an override value for a specific smart class parameter
-POST /api/smart_variables/:smart_variable_id/override_values	Create an override value for a specific smart variable
-POST /api/smart_class_parameters/:smart_class_parameter_id/override_values	Create an override value for a specific smart class parameter
-PUT /api/smart_variables/:smart_variable_id/override_values/:id	Update an override value for a specific smart variable
-PUT /api/smart_class_parameters/:smart_class_parameter_id/override_values/:id	Update an override value for a specific smart class parameter
-DELETE /api/smart_variables/:smart_variable_id/override_values/:id	Delete an override value for a specific smart variable
-DELETE /api/smart_class_parameters/:smart_class_parameter_id/override_values/:id	Delete an override value for a specific smart class parameter
-Parameters
-Resource	Description
-GET /api/hosts/:host_id/parameters	List all parameters for a host
-GET /api/hostgroups/:hostgroup_id/parameters	List all parameters for a host group
-GET /api/domains/:domain_id/parameters	List all parameters for a domain
-GET /api/operatingsystems/:operatingsystem_id/parameters	List all parameters for an operating system
-GET /api/locations/:location_id/parameters	List all parameters for a location
-GET /api/organizations/:organization_id/parameters	List all parameters for an organization
-GET /api/subnets/:subnet_id/parameters	List all parameters for a subnet
-GET /api/hosts/:host_id/parameters/:id	Show a nested parameter for a host
-GET /api/hostgroups/:hostgroup_id/parameters/:id	Show a nested parameter for a host group
-GET /api/domains/:domain_id/parameters/:id	Show a nested parameter for a domain
-GET /api/operatingsystems/:operatingsystem_id/parameters/:id	Show a nested parameter for an operating system
-GET /api/locations/:location_id/parameters/:id	Show a nested parameter for a location
-GET /api/organizations/:organization_id/parameters/:id	Show a nested parameter for an organization
-GET /api/subnets/:subnet_id/parameters/:id	Show a nested parameter for a subnet
-POST /api/hosts/:host_id/parameters	Create a nested parameter for a host
-POST /api/hostgroups/:hostgroup_id/parameters	Create a nested parameter for a host group
-POST /api/domains/:domain_id/parameters	Create a nested parameter for a domain
-POST /api/operatingsystems/:operatingsystem_id/parameters	Create a nested parameter for an operating system
-POST /api/locations/:location_id/parameters	Create a nested parameter for a location
-POST /api/organizations/:organization_id/parameters	Create a nested parameter for an organization
-POST /api/subnets/:subnet_id/parameters	Create a nested parameter for a subnet
-PUT /api/hosts/:host_id/parameters/:id	Update a nested parameter for a host
-PUT /api/hostgroups/:hostgroup_id/parameters/:id	Update a nested parameter for a host group
-PUT /api/domains/:domain_id/parameters/:id	Update a nested parameter for a domain
-PUT /api/operatingsystems/:operatingsystem_id/parameters/:id	Update a nested parameter for an operating system
-PUT /api/locations/:location_id/parameters/:id	Update a nested parameter for a location
-PUT /api/organizations/:organization_id/parameters/:id	Update a nested parameter for an organization
-PUT /api/subnets/:subnet_id/parameters/:id	Update a nested parameter for a subnet
-DELETE /api/hosts/:host_id/parameters/:id	Delete a nested parameter for a host
-DELETE /api/hostgroups/:hostgroup_id/parameters/:id	Delete a nested parameter for a host group
-DELETE /api/domains/:domain_id/parameters/:id	Delete a nested parameter for a domain
-DELETE /api/operatingsystems/:operatingsystem_id/parameters/:id	Delete a nested parameter for an operating system
-DELETE /api/locations/:location_id/parameters/:id	Delete a nested parameter for a location
-DELETE /api/organizations/:organization_id/parameters/:id	Delete a nested parameter for an organization
-DELETE /api/subnets/:subnet_id/parameters/:id	Delete a nested parameter for a subnet
-DELETE /api/hosts/:host_id/parameters	Delete all nested parameters for a host
-DELETE /api/hostgroups/:hostgroup_id/parameters	Delete all nested parameters for a host group
-DELETE /api/domains/:domain_id/parameters	Delete all nested parameters for a domain
-DELETE /api/operatingsystems/:operatingsystem_id/parameters	Delete all nested parameters for an operating system
-DELETE /api/locations/:location_id/parameters	Delete all nested parameter for a location
-DELETE /api/organizations/:organization_id/parameters	Delete all nested parameter for an organization
-DELETE /api/subnets/:subnet_id/parameters	Delete all nested parameters for a subnet
-Permissions
-Resource	Description
-GET /api/permissions	List all permissions
-GET /api/permissions/:id	Show a permission
-GET /api/permissions/resource_types	List available resource types
-Personal access tokens
-Resource	Description
-GET /api/users/:user_id/personal_access_tokens	List all Personal Access Tokens for a user
-GET /api/users/:user_id/personal_access_tokens/:id	Show a Personal Access Token for a user
-POST /api/users/:user_id/personal_access_tokens	Create a Personal Access Token for a user
-DELETE /api/users/:user_id/personal_access_tokens/:id	Revoke a Personal Access Token for a user
-Plugins
-Resource	Description
-GET /api/plugins	List installed plugins
-Provisioning templates
-Resource	Description
-GET /api/provisioning_templates	List provisioning templates
-GET /api/operatingsystems/:operatingsystem_id/provisioning_templates	List provisioning templates per operating system
-GET /api/locations/:location_id/provisioning_templates	List provisioning templates per location
-GET /api/organizations/:organization_id/provisioning_templates	List provisioning templates per organization
-GET /api/provisioning_templates/:id	Show provisioning template details
-POST /api/provisioning_templates	Create a provisioning template
-POST /api/provisioning_templates/import	Import a provisioning template
-PUT /api/provisioning_templates/:id	Update a provisioning template
-GET /api/provisioning_templates/revision	
-DELETE /api/provisioning_templates/:id	Delete a provisioning template
-POST /api/provisioning_templates/build_pxe_default	Update the default PXE menu on all configured TFTP servers
-POST /api/provisioning_templates/:id/clone	Clone a provision template
-GET /api/provisioning_templates/:id/export	Export a provisioning template to ERB
-Ptables
-Resource	Description
-GET /api/ptables	List all partition tables
-GET /api/operatingsystems/:operatingsystem_id/ptables	List all partition tables for an operating system
-GET /api/locations/:location_id/ptables	List all partition tables per location
-GET /api/organizations/:organization_id/ptables	List all partition tables per organization
-GET /api/ptables/:id	Show a partition table
-POST /api/ptables	Create a partition table
-POST /api/ptables/import	Import a provisioning template
-GET /api/ptables/revision	
-PUT /api/ptables/:id	Update a partition table
-DELETE /api/ptables/:id	Delete a partition table
-POST /api/ptables/:id/clone	Clone a template
-GET /api/ptables/:id/export	Export a partition template to ERB
-Puppet hosts
-Resource	Description
-PUT /api/hosts/:id/puppetrun	Force a Puppet agent run on the host
-Puppetclasses
-Resource	Description
-GET /api/puppetclasses	List all Puppet classes
-GET /api/hosts/:host_id/puppetclasses	List all Puppet classes for a host
-GET /api/hostgroups/:hostgroup_id/puppetclasses	List all Puppet classes for a host group
-GET /api/environments/:environment_id/puppetclasses	List all Puppet classes for an environment
-GET /api/puppetclasses/:id	Show a Puppet class
-GET /api/hosts/:host_id/puppetclasses/:id	Show a Puppet class for host
-GET /api/hostgroups/:hostgroup_id/puppetclasses/:id	Show a Puppet class for a host group
-GET /api/environments/:environment_id/puppetclasses/:id	Show a Puppet class for an environment
-POST /api/puppetclasses	Create a Puppet class
-PUT /api/puppetclasses/:id	Update a Puppet class
-DELETE /api/puppetclasses/:id	Delete a Puppet class
-Realms
-Resource	Description
-GET /api/realms	List of realms
-GET /api/realms/:id	Show a realm
-POST /api/realms	Create a realm
-PUT /api/realms/:id	Update a realm
-DELETE /api/realms/:id	Delete a realm
-Report templates
-Resource	Description
-GET /api/report_templates	List all report templates
-GET /api/locations/:location_id/report_templates	List all report templates per location
-GET /api/organizations/:organization_id/report_templates	List all report templates per organization
-GET /api/report_templates/:id	Show a report template
-POST /api/report_templates	Create a report template
-POST /api/report_templates/import	Import a report template
-GET /api/report_templates/revision	
-PUT /api/report_templates/:id	Update a report template
-DELETE /api/report_templates/:id	Delete a report template
-POST /api/report_templates/:id/clone	Clone a template
-GET /api/report_templates/:id/export	Export a report template to ERB
-POST /api/report_templates/:id/generate	Generate a report template
-Reports
-Resource	Description
-GET /api/reports	List all reports
-GET /api/reports/:id	Show a report
-POST /api/reports	Create a report
-DELETE /api/reports/:id	Delete a report
-GET /api/hosts/:host_id/reports/last	Show the last report for a host
-Roles
-Resource	Description
-GET /api/roles	List all roles
-GET /api/roles/:id	Show a role
-POST /api/roles	Create a role
-PUT /api/roles/:id	Update a role
-DELETE /api/roles/:id	Delete a role
-POST /api/roles/:id/clone	Clone a role
-Settings
-Resource	Description
-GET /api/settings	List all settings
-GET /api/settings/:id	Show a setting
-PUT /api/settings/:id	Update a setting
-Smart class parameters
-Resource	Description
-GET /api/smart_class_parameters	List all smart class parameters
-GET /api/hosts/:host_id/smart_class_parameters	List of smart class parameters for a specific host
-GET /api/hostgroups/:hostgroup_id/smart_class_parameters	List of smart class parameters for a specific host group
-GET /api/puppetclasses/:puppetclass_id/smart_class_parameters	List of smart class parameters for a specific Puppet class
-GET /api/environments/:environment_id/smart_class_parameters	List of smart class parameters for a specific environment
-GET /api/environments/:environment_id/puppetclasses/:puppetclass_id/smart_class_parameters	List of smart class parameters for a specific environment/Puppet class combination
-GET /api/smart_class_parameters/:id	Show a smart class parameter
-PUT /api/smart_class_parameters/:id	Update a smart class parameter
-Smart proxies
-Resource	Description
-POST /api/smart_proxies/:id/import_puppetclasses	Import puppet classes from puppet proxy
-POST /api/smart_proxies/:smart_proxy_id/environments/:id/import_puppetclasses	Import puppet classes from puppet proxy for an environment
-POST /api/environments/:environment_id/smart_proxies/:id/import_puppetclasses	Import puppet classes from puppet proxy for an environment
-GET /api/smart_proxies	List all smart proxies
-GET /api/smart_proxies/:id	Show a smart proxy
-POST /api/smart_proxies	Create a smart proxy
-PUT /api/smart_proxies/:id	Update a smart proxy
-DELETE /api/smart_proxies/:id	Delete a smart proxy
-PUT /api/smart_proxies/:id/refresh	Refresh smart proxy features
-Smart variables
-Resource	Description
-GET /api/smart_variables	List all smart variables
-GET /api/hosts/:host_id/smart_variables	List of smart variables for a specific host
-GET /api/hostgroups/:hostgroup_id/smart_variables	List of smart variables for a specific host group
-GET /api/puppetclasses/:puppetclass_id/smart_variables	List of smart variables for a specific Puppet class
-GET /api/smart_variables/:id	Show a smart variable
-POST /api/smart_variables	Create a smart variable
-PUT /api/smart_variables/:id	Update a smart variable
-DELETE /api/smart_variables/:id	Delete a smart variable
-Ssh keys
-Resource	Description
-GET /api/users/:user_id/ssh_keys	List all SSH keys for a user
-GET /api/users/:user_id/ssh_keys/:id	Show an SSH key from a user
-POST /api/users/:user_id/ssh_keys	Add an SSH key for a user
-DELETE /api/users/:user_id/ssh_keys/:id	Delete an SSH key for a user
-Statistics
-Resource	Description
-GET /api/statistics	Get statistics
-Subnets
-Resource	Description
-GET /api/subnets	List of subnets
-GET /api/domains/:domain_id/subnets	List of subnets for a domain
-GET /api/locations/:location_id/subnets	List of subnets per location
-GET /api/organizations/:organization_id/subnets	List of subnets per organization
-GET /api/subnets/:id	Show a subnet
-POST /api/subnets	Create a subnet
-PUT /api/subnets/:id	Update a subnet
-DELETE /api/subnets/:id	Delete a subnet
-GET /api/subnets/:id/freeip	Provides an unused IP address in this subnet
-Table preferences
-Resource	Description
-GET /api/users/:user_id/table_preferences	List of table preferences for a user
-GET /api/users/:user_id/table_preferences/:name	Table preference details of a given table
-POST /api/users/:user_id/table_preferences	Creates a table preference for a given table
-PUT /api/users/:user_id/table_preferences/:name	Updates a table preference for a given table
-DELETE /api/users/:user_id/table_preferences/:name	Delete a table preference for a given table
-Tasks
-Resource	Description
-GET /api/orchestration/:id/tasks	List all tasks for a given orchestration event
-Template combinations
-Resource	Description
-GET /api/config_templates/:config_template_id/template_combinations DEPRECATED	List template combination
-GET /api/provisioning_templates/:provisioning_template_id/template_combinations	List template combination
-GET /api/hostgroups/:hostgroup_id/template_combinations	List template combination
-GET /api/environments/:environment_id/template_combinations	List template combination
-POST /api/config_templates/:config_template_id/template_combinations DEPRECATED	Add a template combination
-POST /api/provisioning_templates/:provisioning_template_id/template_combinations	Add a template combination
-POST /api/hostgroups/:hostgroup_id/template_combinations	Add a template combination
-POST /api/environments/:environment_id/template_combinations	Add a template combination
-GET /api/template_combinations/:id	Show template combination
-GET /api/config_templates/:config_template_id/template_combinations/:id DEPRECATED	Show template combination
-GET /api/provisioning_templates/:provisioning_template_id/template_combinations/:id	Show template combination
-GET /api/hostgroups/:hostgroup_id/template_combinations/:id	Show template combination
-GET /api/environments/:environment_id/template_combinations/:id	Show template combination
-PUT /api/provisioning_templates/:provisioning_template_id/template_combinations/:id	Update template combination
-PUT /api/config_templates/:config_template_id/template_combinations/:id DEPRECATED	Update template combination
-PUT /api/hostgroups/:hostgroup_id/template_combinations/:id	Update template combination
-PUT /api/environments/:environment_id/template_combinations/:id	Update template combination
-DELETE /api/template_combinations/:id	Delete a template combination
-Template inputs
-Resource	Description
-GET /api/templates/:template_id/template_inputs	List template inputs
-GET /api/templates/:template_id/template_inputs/:id	Show template input details
-POST /api/templates/:template_id/template_inputs	Create a template input
-DELETE /api/templates/:template_id/template_inputs/:id	Delete a template input
-PUT /api/templates/:template_id/template_inputs/:id	Update a template input
-Template kinds
-Resource	Description
-GET /api/template_kinds	List all template kinds
-Trends
-Resource	Description
-GET /api/trends	List of trends counters
-GET /api/trends/:id	Show a trend
-POST /api/trends	Create a trend counter
-DELETE /api/trends/:id	Delete a trend counter
-Usergroups
-Resource	Description
-GET /api/usergroups	List all user groups
-GET /api/usergroups/:id	Show a user group
-POST /api/usergroups	Create a user group
-PUT /api/usergroups/:id	Update a user group
-DELETE /api/usergroups/:id	Delete a user group
-Users
-Resource	Description
-GET /api/users	List all users
-GET /api/auth_source_ldaps/:auth_source_ldap_id/users	List all users for LDAP authentication source
-GET /api/auth_source_externals/:auth_source_external_id/users	List all users for external authentication source
-GET /api/usergroups/:usergroup_id/users	List all users for user group
-GET /api/roles/:role_id/users	List all users for role
-GET /api/locations/:location_id/users	List all users for location
-GET /api/organizations/:organization_id/users	List all users for organization
-GET /api/users/:id	Show a user
-POST /api/users	Create a user
-PUT /api/users/:id	Update a user
-DELETE /api/users/:id	Delete a user
-
+GET /api/architectures List all architectures
+GET /api/operatingsystems/:operatingsystem_id/architectures List all architectures for operating system
+GET /api/architectures/:id Show an architecture
+POST /api/architectures Create an architecture
+PUT /api/architectures/:id Update an architecture
+DELETE /api/architectures/:id Delete an architecture
+GET /api/audits List all audits
+GET /api/hosts/:host_id/audits List all audits for a given host
+GET /api/audits/:id Show an audit
+GET /api/auth_source_externals List external authentication sources
+GET /api/locations/:location_id/auth_source_externals List external authentication sources per location
+GET /api/organizations/:organization_id/auth_source_externals List external authentication sources per organization
+GET /api/auth_source_externals/:id Show an external authentication source
+PUT /api/auth_source_externals/:id Update an external authentication source
+GET /api/auth_source_internals List internal authentication sources
+GET /api/auth_source_internals/:id Show an internal authentication source
+GET /api/auth_source_ldaps List all LDAP authentication sources
+GET /api/locations/:location_id/auth_source_ldaps List LDAP authentication sources per location
+GET /api/organizations/:organization_id/auth_source_ldaps List LDAP authentication sources per organization
+GET /api/auth_source_ldaps/:id Show an LDAP authentication source
+POST /api/auth_source_ldaps Create an LDAP authentication source
+PUT /api/auth_source_ldaps/:id Update an LDAP authentication source
+PUT /api/auth_source_ldaps/:id/test Test LDAP connection
+DELETE /api/auth_source_ldaps/:id Delete an LDAP authentication source
+GET /api/auth_sources List all authentication sources
+GET /api/locations/:location_id/auth_sources List all authentication sources per location
+GET /api/organizations/:organization_id/auth_sources List all authentication sources per organization
+GET /api/smart_proxies/:smart_proxy_id/autosign List all autosign entries
+POST /api/smart_proxies/:smart_proxy_id/autosign Create autosign entry
+DELETE /api/smart_proxies/:smart_proxy_id/autosign/:id Delete autosign entry
+GET /api/bookmarks List all bookmarks
+GET /api/bookmarks/:id Show a bookmark
+POST /api/bookmarks Create a bookmark
+PUT /api/bookmarks/:id Update a bookmark
+DELETE /api/bookmarks/:id Delete a bookmark
+GET /api/common_parameters List all global parameters
+GET /api/common_parameters/:id Show a global parameter
+POST /api/common_parameters Create a global parameter
+PUT /api/common_parameters/:id Update a global parameter
+DELETE /api/common_parameters/:id Delete a global parameter
+GET /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes List of compute attributes for provided compute profile and compute resource
+GET /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes List of compute attributes for provided compute profile and compute resource
+GET /api/compute_resources/:compute_resource_id/compute_attributes List of compute attributes for compute resource
+GET /api/compute_profiles/:compute_profile_id/compute_attributes List of compute attributes for compute profile
+GET /api/compute_attributes/:id List of compute attributes
+GET /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes/:id Show a compute attributes set
+GET /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes/:id Show a compute attributes set
+GET /api/compute_resources/:compute_resource_id/compute_attributes/:id Show a compute attributes set
+GET /api/compute_profiles/:compute_profile_id/compute_attributes/:id Show a compute attributes set
+GET /api/compute_attributes/:id Show a compute attributes set
+POST /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes Create a compute attributes set
+POST /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes Create a compute attributes set
+POST /api/compute_resources/:compute_resource_id/compute_attributes Create a compute attributes set
+POST /api/compute_profiles/:compute_profile_id/compute_attributes Create a compute attributes set
+POST /api/compute_attributes Create a compute attributes set
+PUT /api/compute_resources/:compute_resource_id/compute_profiles/:compute_profile_id/compute_attributes/:id Update a compute attributes set
+PUT /api/compute_profiles/:compute_profile_id/compute_resources/:compute_resource_id/compute_attributes/:id Update a compute attributes set
+PUT /api/compute_resources/:compute_resource_id/compute_attributes/:id Update a compute attributes set
+PUT /api/compute_profiles/:compute_profile_id/compute_attributes/:id Update a compute attributes set
+PUT /api/compute_attributes/:id Update a compute attributes set
+GET /api/compute_profiles List of compute profiles
+GET /api/compute_profiles/:id Show a compute profile
+POST /api/compute_profiles Create a compute profile
+PUT /api/compute_profiles/:id Update a compute profile
+DELETE /api/compute_profiles/:id Delete a compute profile
+GET /api/compute_resources List all compute resources
+GET /api/compute_resources/:id Show a compute resource
+POST /api/compute_resources Create a compute resource
+PUT /api/compute_resources/:id Update a compute resource
+DELETE /api/compute_resources/:id Delete a compute resource
+GET /api/compute_resources/:id/available_images List available images for a compute resource
+GET /api/compute_resources/:id/available_clusters List available clusters for a compute resource
+GET /api/compute_resources/:id/available_flavors List available flavors for a compute resource
+GET /api/compute_resources/:id/available_folders List available folders for a compute resource
+GET /api/compute_resources/:id/available_zones List available zone for a compute resource
+GET /api/compute_resources/:id/available_networks List available networks for a compute resource
+GET /api/compute_resources/:id/available_clusters/:cluster_id/available_networks List available networks for a compute resource cluster
+GET /api/compute_resources/:id/available_vnic_profiles List available vnic profiles for a compute resource
+GET /api/compute_resources/:id/available_clusters/:cluster_id/available_resource_pools List resource pools for a compute resource cluster
+GET /api/compute_resources/:id/storage_domains/:storage_domain_id List attributes for a given storage domain
+GET /api/compute_resources/:id/available_storage_domains List storage domains for a compute resource
+GET /api/compute_resources/:id/available_storage_domains/:storage_domain List attributes for a given storage domain
+GET /api/compute_resources/:id/available_clusters/:cluster_id/available_storage_domains List storage domains for a compute resource
+GET /api/compute_resources/:id/storage_pods/:storage_pod_id List attributes for a given storage pod
+GET /api/compute_resources/:id/available_storage_pods List storage pods for a compute resource
+GET /api/compute_resources/:id/available_storage_pods/:storage_pod List attributes for a given storage pod
+GET /api/compute_resources/:id/available_clusters/:cluster_id/available_storage_pods List storage pods for a compute resource
+GET /api/compute_resources/:id/available_security_groups List available security groups for a compute resource
+PUT /api/compute_resources/:id/associate/:vm_id Associate VMs to Hosts
+PUT /api/compute_resources/:id/refresh_cache Refresh Compute Resource Cache
+GET /api/compute_resources/:id/available_virtual_machines List available virtual machines for a compute resource
+GET /api/compute_resources/:id/available_virtual_machines/:vm_id Show a virtual machine
+PUT /api/compute_resources/:id/available_virtual_machines/:vm_id/power Power a Virtual Machine
+DELETE /api/compute_resources/:id/available_virtual_machines/:vm_id Delete a Virtual Machine
+GET /api/config_reports List all reports
+GET /api/config_reports/:id Show a report
+POST /api/config_reports Create a report
+DELETE /api/config_reports/:id Delete a report
+GET /api/hosts/:host_id/config_reports/last Show the last report for a host
+GET /api/dashboard Get dashboard details
+GET /api/domains List of domains
+GET /api/subnets/:subnet_id/domains List of domains per subnet
+GET /api/locations/:location_id/domains List of domains per location
+GET /api/organizations/:organization_id/domains List of domains per organization
+GET /api/domains/:id Show a domain
+POST /api/domains Create a domain
+PUT /api/domains/:id Update a domain
+DELETE /api/domains/:id Delete a domain
+GET /api/usergroups/:usergroup_id/external_usergroups List all external user groups for user group
+GET /api/auth_source_ldaps/:auth_source_ldap_id/external_usergroups List all external user groups for LDAP authentication source
+GET /api/usergroups/:usergroup_id/external_usergroups/:id Show an external user group for user group
+GET /api/auth_source_ldaps/:auth_source_ldap_id/external_usergroups/:id Show an external user group for LDAP authentication source
+POST /api/usergroups/:usergroup_id/external_usergroups Create an external user group linked to a user group
+PUT /api/usergroups/:usergroup_id/external_usergroups/:id Update external user group
+PUT /api/usergroups/:usergroup_id/external_usergroups/:id/refresh Refresh external user group
+DELETE /api/usergroups/:usergroup_id/external_usergroups/:id Delete an external user group
+GET /api/fact_values List all fact values
+GET /api/hosts/:host_id/facts List all fact values of a given host
+GET /api/filters List all filters
+GET /api/filters/:id Show a filter
+POST /api/filters Create a filter
+PUT /api/filters/:id Update a filter
+DELETE /api/filters/:id Delete a filter
+GET /api Show available API links
+GET /api/status Show status
+GET /api/host_statuses List of host statuses
+GET /api/hostgroups List all host groups
+GET /api/locations/:location_id/hostgroups List all host groups per location
+GET /api/organizations/:organization_id/hostgroups List all host groups per organization
+GET /api/hostgroups/:id Show a host group
+POST /api/hostgroups Create a host group
+PUT /api/hostgroups/:id Update a host group
+DELETE /api/hostgroups/:id Delete a host group
+POST /api/hostgroups/:id/clone Clone a host group
+PUT /api/hostgroups/:id/rebuild_config Rebuild orchestration config
+GET /api/hosts List all hosts
+GET /api/hostgroups/:hostgroup_id/hosts List all hosts for a host group
+GET /api/locations/:location_id/hosts List hosts per location
+GET /api/organizations/:organization_id/hosts List hosts per organization
+GET /api/hosts/:id Show a host
+POST /api/hosts Create a host
+PUT /api/hosts/:id Update a host
+DELETE /api/hosts/:id Delete a host
+GET /api/hosts/:id/enc Get ENC values of host
+GET /api/hosts/:id/status/:type Get status of host
+DELETE /api/hosts/:id/status/:type Clear sub-status of host
+GET /api/hosts/:id/vm_compute_attributes Get vm attributes of host
+PUT /api/hosts/:id/disassociate Disassociate the host from a VM
+PUT /api/hosts/:id/power Run a power operation on host
+GET /api/hosts/:id/power Fetch the status of whether the host is powered on or not
+PUT /api/hosts/:id/boot Boot host from specified device
+POST /api/hosts/facts Upload facts for a host
+PUT /api/hosts/:id/rebuild_config Rebuild orchestration config
+GET /api/hosts/:id/template/:kind Preview rendered provisioning template content
+GET /api/http_proxies List of HTTP Proxies
+GET /api/http_proxies/:id Show an HTTP Proxy
+POST /api/http_proxies Create an HTTP Proxy
+PUT /api/http_proxies/:id Update an HTTP Proxy
+DELETE /api/http_proxies/:id Delete an HTTP Proxy
+GET /api/compute_resources/:compute_resource_id/images List all images for a compute resource
+GET /api/operatingsystems/:operatingsystem_id/images List all images for operating system
+GET /api/architectures/:architecture_id/images List all images for architecture
+GET /api/compute_resources/:compute_resource_id/images/:id Show an image
+GET /api/operatingsystems/:operatingsystem_id/images/:id Show an image
+GET /api/architectures/:architecture_id/images/:id Show an image
+POST /api/compute_resources/:compute_resource_id/images Create an image
+PUT /api/compute_resources/:compute_resource_id/images/:id Update an image
+DELETE /api/compute_resources/:compute_resource_id/images/:id Delete an image
+PUT /api/instance_hosts/:host_id Assign a host to the Foreman instance
+GET /api/instance_hosts List hosts forming the Foreman instance
+GET /api/hosts/:host_id/interfaces List all interfaces for host
+GET /api/domains/:domain_id/interfaces List all interfaces for domain
+GET /api/subnets/:subnet_id/interfaces List all interfaces for subnet
+GET /api/hosts/:host_id/interfaces/:id Show an interface for host
+POST /api/hosts/:host_id/interfaces Create an interface on a host
+PUT /api/hosts/:host_id/interfaces/:id Update a host&#39;s interface
+DELETE /api/hosts/:host_id/interfaces/:id Delete a host&#39;s interface
+GET /api/locations List all locations
+GET /api/locations/:id Show a location
+POST /api/locations Create a location
+PUT /api/locations/:id Update a location
+DELETE /api/locations/:id Delete a location
+GET /api/mail_notifications List of email notifications
+GET /api/mail_notifications/:id Show an email notification
+POST /api/users/:user_id/mail_notifications Add an email notification for a user
+PUT /api/users/:user_id/mail_notifications/:mail_notification_id Update an email notification for a user
+DELETE /api/users/:user_id/mail_notifications/:mail_notification_id Remove an email notification for a user
+GET /api/users/:user_id/mail_notifications List all email notifications for a user
+GET /api/media List all installation media
+GET /api/operatingsystems/:operatingsystem_id/media List all media for an operating system
+GET /api/locations/:location_id/media List all media per location
+GET /api/organizations/:organization_id/media List all media per organization
+GET /api/media/:id Show a medium
+POST /api/media Create a medium
+PUT /api/media/:id Update a medium
+DELETE /api/media/:id Delete a medium
+GET /api/models List all hardware models
+GET /api/models/:id Show a hardware model
+POST /api/models Create a hardware model
+PUT /api/models/:id Update a hardware model
+DELETE /api/models/:id Delete a hardware model
+GET /api/operatingsystems List all operating systems
+GET /api/architectures/:architecture_id/operatingsystems List all operating systems for nested architecture
+GET /api/media/:medium_id/operatingsystems List all operating systems for nested medium
+GET /api/ptables/:ptable_id/operatingsystems List all operating systems for nested partition table
+GET /api/provisioning_templates/:provisioning_template_id/operatingsystems List all operating systems for nested provisioning template
+GET /api/operatingsystems/:id Show an operating system
+POST /api/operatingsystems Create an operating system
+PUT /api/operatingsystems/:id Update an operating system
+DELETE /api/operatingsystems/:id Delete an operating system
+GET /api/operatingsystems/:id/bootfiles List boot files for an operating system
+GET /api/organizations List all organizations
+GET /api/organizations/:id Show an organization
+POST /api/organizations Create an organization
+PUT /api/organizations/:id Update an organization
+DELETE /api/organizations/:id Delete an organization
+GET /api/operatingsystems/:operatingsystem_id/os_default_templates List default templates combinations for an operating system
+GET /api/provisioning_templates/:provisioning_template_id/os_default_templates List operating systems where this template is set as a default
+GET /api/operatingsystems/:operatingsystem_id/os_default_templates/:id Show a default template combination for an operating system
+POST /api/operatingsystems/:operatingsystem_id/os_default_templates Create a default template combination for an operating system
+PUT /api/operatingsystems/:operatingsystem_id/os_default_templates/:id Update a default template combination for an operating system
+DELETE /api/operatingsystems/:operatingsystem_id/os_default_templates/:id Delete a default template combination for an operating system
+GET /api/hosts/:host_id/parameters List all parameters for a host
+GET /api/hostgroups/:hostgroup_id/parameters List all parameters for a host group
+GET /api/domains/:domain_id/parameters List all parameters for a domain
+GET /api/operatingsystems/:operatingsystem_id/parameters List all parameters for an operating system
+GET /api/locations/:location_id/parameters List all parameters for a location
+GET /api/organizations/:organization_id/parameters List all parameters for an organization
+GET /api/subnets/:subnet_id/parameters List all parameters for a subnet
+GET /api/hosts/:host_id/parameters/:id Show a nested parameter for a host
+GET /api/hostgroups/:hostgroup_id/parameters/:id Show a nested parameter for a host group
+GET /api/domains/:domain_id/parameters/:id Show a nested parameter for a domain
+GET /api/operatingsystems/:operatingsystem_id/parameters/:id Show a nested parameter for an operating system
+GET /api/locations/:location_id/parameters/:id Show a nested parameter for a location
+GET /api/organizations/:organization_id/parameters/:id Show a nested parameter for an organization
+GET /api/subnets/:subnet_id/parameters/:id Show a nested parameter for a subnet
+POST /api/hosts/:host_id/parameters Create a nested parameter for a host
+POST /api/hostgroups/:hostgroup_id/parameters Create a nested parameter for a host group
+POST /api/domains/:domain_id/parameters Create a nested parameter for a domain
+POST /api/operatingsystems/:operatingsystem_id/parameters Create a nested parameter for an operating system
+POST /api/locations/:location_id/parameters Create a nested parameter for a location
+POST /api/organizations/:organization_id/parameters Create a nested parameter for an organization
+POST /api/subnets/:subnet_id/parameters Create a nested parameter for a subnet
+PUT /api/hosts/:host_id/parameters/:id Update a nested parameter for a host
+PUT /api/hostgroups/:hostgroup_id/parameters/:id Update a nested parameter for a host group
+PUT /api/domains/:domain_id/parameters/:id Update a nested parameter for a domain
+PUT /api/operatingsystems/:operatingsystem_id/parameters/:id Update a nested parameter for an operating system
+PUT /api/locations/:location_id/parameters/:id Update a nested parameter for a location
+PUT /api/organizations/:organization_id/parameters/:id Update a nested parameter for an organization
+PUT /api/subnets/:subnet_id/parameters/:id Update a nested parameter for a subnet
+DELETE /api/hosts/:host_id/parameters/:id Delete a nested parameter for a host
+DELETE /api/hostgroups/:hostgroup_id/parameters/:id Delete a nested parameter for a host group
+DELETE /api/domains/:domain_id/parameters/:id Delete a nested parameter for a domain
+DELETE /api/operatingsystems/:operatingsystem_id/parameters/:id Delete a nested parameter for an operating system
+DELETE /api/locations/:location_id/parameters/:id Delete a nested parameter for a location
+DELETE /api/organizations/:organization_id/parameters/:id Delete a nested parameter for an organization
+DELETE /api/subnets/:subnet_id/parameters/:id Delete a nested parameter for a subnet
+DELETE /api/hosts/:host_id/parameters Delete all nested parameters for a host
+DELETE /api/hostgroups/:hostgroup_id/parameters Delete all nested parameters for a host group
+DELETE /api/domains/:domain_id/parameters Delete all nested parameters for a domain
+DELETE /api/operatingsystems/:operatingsystem_id/parameters Delete all nested parameters for an operating system
+DELETE /api/locations/:location_id/parameters Delete all nested parameter for a location
+DELETE /api/organizations/:organization_id/parameters Delete all nested parameter for an organization
+DELETE /api/subnets/:subnet_id/parameters Delete all nested parameters for a subnet
+GET /api/permissions List all permissions
+GET /api/permissions/:id Show a permission
+GET /api/permissions/resource_types List available resource types
+GET /api/users/:user_id/personal_access_tokens List all Personal Access Tokens for a user
+GET /api/users/:user_id/personal_access_tokens/:id Show a Personal Access Token for a user
+POST /api/users/:user_id/personal_access_tokens Create a Personal Access Token for a user
+DELETE /api/users/:user_id/personal_access_tokens/:id Revoke a Personal Access Token for a user
+GET /api/ping Shows status of Foreman system and it&#39;s subcomponents
+GET /api/statuses Shows status and version information of Foreman system and it&#39;s subcomponents
+GET /api/plugins List installed plugins
+GET /api/provisioning_templates List provisioning templates
+GET /api/operatingsystems/:operatingsystem_id/provisioning_templates List provisioning templates per operating system
+GET /api/locations/:location_id/provisioning_templates List provisioning templates per location
+GET /api/organizations/:organization_id/provisioning_templates List provisioning templates per organization
+GET /api/provisioning_templates/:id Show provisioning template details
+POST /api/provisioning_templates Create a provisioning template
+POST /api/provisioning_templates/import Import a provisioning template
+PUT /api/provisioning_templates/:id Update a provisioning template
+GET /api/provisioning_templates/revision Get provisioning template revision
+DELETE /api/provisioning_templates/:id Delete a provisioning template
+POST /api/provisioning_templates/build_pxe_default Update the default PXE menu on all configured TFTP servers
+POST /api/provisioning_templates/:id/clone Clone a provision template
+GET /api/provisioning_templates/:id/export Export a provisioning template to ERB
+GET /api/ptables List all partition tables
+GET /api/operatingsystems/:operatingsystem_id/ptables List all partition tables for an operating system
+GET /api/locations/:location_id/ptables List all partition tables per location
+GET /api/organizations/:organization_id/ptables List all partition tables per organization
+GET /api/ptables/:id Show a partition table
+POST /api/ptables Create a partition table
+POST /api/ptables/import Import a provisioning template
+GET /api/ptables/revision Get partition table revision
+PUT /api/ptables/:id Update a partition table
+DELETE /api/ptables/:id Delete a partition table
+POST /api/ptables/:id/clone Clone a template
+GET /api/ptables/:id/export Export a partition template to ERB
+GET /api/realms List of realms
+GET /api/realms/:id Show a realm
+POST /api/realms Create a realm
+PUT /api/realms/:id Update a realm
+DELETE /api/realms/:id Delete a realm
+GET /api/register Render Global registration template
+POST /api/register Find or create a host and render the &#39;Host initial configuration&#39; template
+POST /api/registration_commands Generate global registration command
+GET /api/report_templates List all report templates
+GET /api/locations/:location_id/report_templates List all report templates per location
+GET /api/organizations/:organization_id/report_templates List all report templates per organization
+GET /api/report_templates/:id Show a report template
+POST /api/report_templates Create a report template
+POST /api/report_templates/import Import a report template
+GET /api/report_templates/revision Get report template revision
+PUT /api/report_templates/:id Update a report template
+DELETE /api/report_templates/:id Delete a report template
+POST /api/report_templates/:id/clone Clone a template
+GET /api/report_templates/:id/export Export a report template to ERB
+POST /api/report_templates/:id/generate Generate report from a template
+POST /api/report_templates/:id/schedule_report Schedule generating of a report
+GET /api/report_templates/:id/report_data/:job_id Downloads a generated report
+GET /api/roles List all roles
+GET /api/roles/:id Show a role
+POST /api/roles Create a role
+PUT /api/roles/:id Update a role
+DELETE /api/roles/:id Delete a role
+POST /api/roles/:id/clone Clone a role
+GET /api/settings List all settings
+GET /api/settings/:id Show a setting
+PUT /api/settings/:id Update a setting
+GET /api/smart_proxies List all smart proxies
+GET /api/smart_proxies/:id Show a smart proxy
+POST /api/smart_proxies Create a smart proxy
+PUT /api/smart_proxies/:id Update a smart proxy
+DELETE /api/smart_proxies/:id Delete a smart proxy
+PUT /api/smart_proxies/:id/refresh Refresh smart proxy features
+POST /api/smart_proxies/:id/import_subnets Import subnets from Smart proxy
+PUT /api/smart_proxies/:smart_proxy_id/hosts/:host_id Assign a host to the smart proxy
+GET /api/smart_proxies/:smart_proxy_id/hosts Get hosts forming the smart proxy
+DELETE /api/smart_proxies/:smart_proxy_id/hosts/:host_id Unassign a given host from the smart proxy
+GET /api/users/:user_id/ssh_keys List all SSH keys for a user
+GET /api/users/:user_id/ssh_keys/:id Show an SSH key from a user
+POST /api/users/:user_id/ssh_keys Add an SSH key for a user
+DELETE /api/users/:user_id/ssh_keys/:id Delete an SSH key for a user
+GET /api/subnets List of subnets
+GET /api/domains/:domain_id/subnets List of subnets for a domain
+GET /api/locations/:location_id/subnets List of subnets per location
+GET /api/organizations/:organization_id/subnets List of subnets per organization
+GET /api/subnets/:id Show a subnet
+POST /api/subnets Create a subnet
+PUT /api/subnets/:id Update a subnet
+DELETE /api/subnets/:id Delete a subnet
+GET /api/subnets/:id/freeip Provides an unused IP address in this subnet
+GET /api/users/:user_id/table_preferences List of table preferences for a user
+GET /api/users/:user_id/table_preferences/:name Table preference details of a given table
+POST /api/users/:user_id/table_preferences Creates a table preference for a given table
+PUT /api/users/:user_id/table_preferences/:name Updates a table preference for a given table
+DELETE /api/users/:user_id/table_preferences/:name Delete a table preference for a given table
+GET /api/orchestration/:id/tasks List all tasks for a given orchestration event
+GET /api/provisioning_templates/:provisioning_template_id/template_combinations List template combination
+GET /api/hostgroups/:hostgroup_id/template_combinations List template combination
+POST /api/provisioning_templates/:provisioning_template_id/template_combinations Add a template combination
+POST /api/hostgroups/:hostgroup_id/template_combinations Add a template combination
+GET /api/template_combinations/:id Show template combination
+GET /api/provisioning_templates/:provisioning_template_id/template_combinations/:id Show template combination
+GET /api/hostgroups/:hostgroup_id/template_combinations/:id Show template combination
+PUT /api/provisioning_templates/:provisioning_template_id/template_combinations/:id Update template combination
+PUT /api/hostgroups/:hostgroup_id/template_combinations/:id Update template combination
+DELETE /api/template_combinations/:id Delete a template combination
+GET /api/templates/:template_id/template_inputs List template inputs
+GET /api/templates/:template_id/template_inputs/:id Show template input details
+POST /api/templates/:template_id/template_inputs Create a template input
+DELETE /api/templates/:template_id/template_inputs/:id Delete a template input
+PUT /api/templates/:template_id/template_inputs/:id Update a template input
+GET /api/template_kinds List all template kinds
+GET /api/usergroups List all user groups
+GET /api/usergroups/:id Show a user group
+POST /api/usergroups Create a user group
+PUT /api/usergroups/:id Update a user group
+DELETE /api/usergroups/:id Delete a user group
+GET /api/users List all users
+GET /api/auth_source_ldaps/:auth_source_ldap_id/users List all users for LDAP authentication source
+GET /api/auth_source_externals/:auth_source_external_id/users List all users for external authentication source
+GET /api/usergroups/:usergroup_id/users List all users for user group
+GET /api/roles/:role_id/users List all users for role
+GET /api/locations/:location_id/users List all users for location
+GET /api/organizations/:organization_id/users List all users for organization
+GET /api/users/:id Show a user
+GET /api/current_user Show the currently logged-in user
+POST /api/users Create a user
+PUT /api/users/:id Update a user
+DELETE /api/users/:id Delete a user
